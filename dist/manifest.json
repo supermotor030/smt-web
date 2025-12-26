@@ -1,0 +1,21 @@
+{
+  "name": "Super Motor Trading",
+  "short_name": "SuperMotor",
+  "description": "Premium Vehicle Spare Parts in Sri Lanka - Toyota, Honda, BMW, Mercedes & more. Quality parts, competitive prices.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030305",
+  "theme_color": "#FF5500",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "automotive"],
+  "lang": "en",
+  "dir": "ltr"
+}

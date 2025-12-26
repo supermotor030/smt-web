@@ -1,0 +1,662 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-void text-steel-100 font-body overflow-x-hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-forge-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-forge-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ignition-600;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-ignition-600/30 text-white;
+  }
+
+  /* Focus visible */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ignition-500;
+  }
+
+  /* Skip to main content link */
+  .skip-link {
+    @apply absolute -top-10 left-4 bg-ignition-600 text-white px-4 py-2 rounded-md z-[100] transition-all duration-300;
+  }
+
+  .skip-link:focus {
+    @apply top-4;
+  }
+}
+
+@layer components {
+  /* Glassmorphism effect */
+  .glass {
+    @apply bg-forge-900/85 backdrop-blur-[20px] border border-white/5;
+  }
+
+  .glass-light {
+    @apply bg-white/85 backdrop-blur-[20px] border border-black/5;
+  }
+
+  /* Orange gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-ignition-700 via-ignition-600 to-ignition-400;
+  }
+
+  /* Button base styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-ignition-700 via-ignition-600 to-ignition-400 text-white font-tech font-semibold uppercase tracking-wide rounded-lg transition-all duration-300 hover:shadow-orange-glow hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-steel-800 text-steel-300 font-tech font-semibold uppercase tracking-wide rounded-lg transition-all duration-300 hover:border-ignition-600 hover:text-ignition-500;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-whatsapp text-white font-tech font-semibold uppercase tracking-wide rounded-lg transition-all duration-300 hover:shadow-whatsapp-glow hover:scale-105 active:scale-95;
+  }
+
+  /* Section styling */
+  .section-dark {
+    @apply bg-forge-900 relative overflow-hidden;
+  }
+
+  .section-light {
+    @apply bg-snow relative overflow-hidden;
+  }
+
+  .section-alt {
+    @apply bg-concrete relative overflow-hidden;
+  }
+
+  /* Card styling */
+  .card {
+    @apply bg-white rounded-2xl border-2 border-gray-100 transition-all duration-300;
+  }
+
+  .card-dark {
+    @apply bg-forge-700 rounded-2xl border border-forge-600 transition-all duration-300;
+  }
+
+  /* Noise texture overlay */
+  .noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Blueprint grid background */
+  .blueprint-grid {
+    background-image: 
+      linear-gradient(rgba(0, 119, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 119, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Animated underline */
+  .animated-underline {
+    @apply relative;
+  }
+
+  .animated-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-ignition-600 transition-all duration-300;
+  }
+
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Magnetic button effect container */
+  .magnetic-btn {
+    @apply relative transition-transform duration-300 ease-out;
+  }
+
+  /* Hexagon bolt decoration */
+  .bolt {
+    @apply w-3 h-3 bg-steel-600 rotate-45 rounded-sm;
+  }
+
+  /* Garage door lines */
+  .garage-lines {
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 30px,
+      rgba(0, 0, 0, 0.03) 30px,
+      rgba(0, 0, 0, 0.03) 31px
+    );
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Perspective for 3D effects */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Text stroke effect */
+  .text-stroke {
+    -webkit-text-stroke: 1px currentColor;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Glow effects */
+  .glow-orange {
+    filter: drop-shadow(0 0 10px rgba(255, 85, 0, 0.5));
+  }
+
+  .glow-blue {
+    filter: drop-shadow(0 0 10px rgba(0, 119, 255, 0.5));
+  }
+
+  /* Animation delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  /* Cursor styles */
+  .cursor-none {
+    cursor: none;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Light Mode Theme Overrides */
+.light-mode body {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+.light-mode .glass {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid #e2e8f0;
+}
+
+.light-mode .section-dark {
+  background-color: #f1f5f9;
+}
+
+.light-mode .section-light {
+  background-color: #ffffff;
+}
+
+.light-mode .card-dark {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.light-mode ::-webkit-scrollbar-track {
+  background-color: #f1f5f9;
+}
+
+.light-mode ::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+}
+
+.light-mode ::-webkit-scrollbar-thumb:hover {
+  background-color: #ff5500;
+}
+
+.light-mode .text-steel-100 {
+  color: #1e293b;
+}
+
+.light-mode .text-steel-200 {
+  color: #334155;
+}
+
+.light-mode .text-steel-300 {
+  color: #475569;
+}
+
+.light-mode .text-steel-400 {
+  color: #64748b;
+}
+
+.light-mode .bg-void {
+  background-color: #f8fafc;
+}
+
+.light-mode .bg-forge-900 {
+  background-color: #ffffff;
+}
+
+.light-mode .bg-forge-900\/95 {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.light-mode .bg-forge-900\/80 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.light-mode .bg-forge-800 {
+  background-color: #f8fafc;
+}
+
+.light-mode .bg-forge-700 {
+  background-color: #f1f5f9;
+}
+
+.light-mode .border-forge-600 {
+  border-color: #e2e8f0;
+}
+
+.light-mode .border-steel-700 {
+  border-color: #cbd5e1;
+}
+
+.light-mode .border-steel-800 {
+  border-color: #e2e8f0;
+}
+
+.light-mode .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+.light-mode .from-void {
+  --tw-gradient-from: #f8fafc;
+}
+
+.light-mode .to-forge-900 {
+  --tw-gradient-to: #ffffff;
+}
+
+/* Light mode - Text colors for steel (light to dark) */
+.light-mode .text-steel-500 {
+  color: #475569;
+}
+
+.light-mode .text-steel-600 {
+  color: #334155;
+}
+
+/* Light mode - Background forge dark colors to light */
+.light-mode .bg-forge-600 {
+  background-color: #e2e8f0;
+}
+
+.light-mode .bg-forge-950 {
+  background-color: #f1f5f9;
+}
+
+/* Light mode - Section backgrounds */
+.light-mode section.bg-forge-900 {
+  background-color: #f8fafc;
+}
+
+/* Light mode - Keep branded dark sections on certain components */
+.light-mode .bg-forge-900.rounded-xl,
+.light-mode .bg-forge-900.rounded-2xl {
+  background-color: #1e293b;
+}
+
+/* Light mode - Mobile CTA bar should stay dark */
+.light-mode [class*="fixed"][class*="bottom-0"][class*="bg-forge-900"] {
+  background-color: rgba(30, 41, 59, 0.95);
+}
+
+/* Light mode - Navbar */
+.light-mode .bg-forge-900\/95 {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.light-mode .bg-forge-900\/80 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Light mode - Hero section adjustments */
+.light-mode .text-steel-100 {
+  color: #1e293b !important;
+}
+
+/* Light mode - Border adjustments */
+.light-mode .border-forge-700 {
+  border-color: #e2e8f0;
+}
+
+.light-mode .border-ignition-600\/20 {
+  border-color: rgba(255, 85, 0, 0.2);
+}
+
+.light-mode .border-ignition-600\/10 {
+  border-color: rgba(255, 85, 0, 0.1);
+}
+
+/* Light mode - Cards and glass elements */
+.light-mode .bg-forge-800\/50 {
+  background-color: rgba(241, 245, 249, 0.9);
+}
+
+.light-mode .bg-forge-800\/80 {
+  background-color: rgba(241, 245, 249, 0.9);
+}
+
+.light-mode .bg-forge-800\/90 {
+  background-color: rgba(241, 245, 249, 0.95);
+}
+
+.light-mode .bg-forge-700\/50 {
+  background-color: rgba(226, 232, 240, 0.8);
+}
+
+/* Light mode - Steel border colors */
+.light-mode .border-steel-700\/30 {
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+.light-mode .border-steel-600\/30 {
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+/* Light mode - Navbar text */
+.light-mode nav .text-steel-100,
+.light-mode .navbar .text-steel-100 {
+  color: #1e293b !important;
+}
+
+.light-mode nav .text-steel-400,
+.light-mode .navbar .text-steel-400 {
+  color: #475569 !important;
+}
+
+/* Light mode - Footer should remain dark themed */
+.light-mode footer.bg-void,
+.light-mode footer {
+  background-color: #0f172a !important;
+}
+
+/* Light mode - Footer text stays in original light colors (dark theme) */
+.light-mode footer .text-steel-100 {
+  color: #e2e8f0 !important;
+}
+
+.light-mode footer .text-steel-300 {
+  color: #cbd5e1 !important;
+}
+
+.light-mode footer .text-steel-400 {
+  color: #94a3b8 !important;
+}
+
+.light-mode footer .text-steel-500 {
+  color: #64748b !important;
+}
+
+.light-mode footer .text-steel-600 {
+  color: #475569 !important;
+}
+
+.light-mode footer .bg-forge-800 {
+  background-color: #1e293b !important;
+}
+
+.light-mode footer .bg-forge-950 {
+  background-color: #0c0e14 !important;
+}
+
+.light-mode footer .border-forge-800 {
+  border-color: #1e293b !important;
+}
+
+/* Light mode - CTA section stays dark */
+.light-mode section.bg-forge-900:has(.gradient-text) {
+  background-color: #1e293b;
+}
+
+/* Light mode - Vehicles section stays dark */
+.light-mode #vehicles {
+  background-color: #1e293b !important;
+}
+
+.light-mode #vehicles .text-steel-100 {
+  color: #e2e8f0 !important;
+}
+
+.light-mode #vehicles .text-steel-200 {
+  color: #cbd5e1 !important;
+}
+
+.light-mode #vehicles .text-steel-300 {
+  color: #94a3b8 !important;
+}
+
+.light-mode #vehicles .text-steel-400 {
+  color: #64748b !important;
+}
+
+/* Light mode - Testimonials section stays dark */
+.light-mode #testimonials,
+.light-mode section:has(.testimonial) {
+  background-color: #1e293b !important;
+}
+
+.light-mode #testimonials .text-steel-100,
+.light-mode #testimonials .text-steel-200 {
+  color: #e2e8f0 !important;
+}
+
+.light-mode #testimonials .text-steel-400 {
+  color: #94a3b8 !important;
+}
+
+/* Light mode - WhatsApp button tooltip */
+.light-mode .bg-forge-900.text-white {
+  background-color: #1e293b !important;
+}
+
+/* Light mode - Contact section dark cards preserve their styling */
+.light-mode #contact .bg-forge-900 {
+  background-color: #1e293b !important;
+}
+
+.light-mode #contact .bg-forge-900 .text-steel-100 {
+  color: #e2e8f0 !important;
+}
+
+.light-mode #contact .bg-forge-900 .text-steel-300 {
+  color: #cbd5e1 !important;
+}
+
+.light-mode #contact .bg-forge-900 .text-steel-400 {
+  color: #94a3b8 !important;
+}
+
+.light-mode #contact .bg-forge-800:hover {
+  background-color: #334155 !important;
+}
+
+/* Light mode - Back to top button */
+.light-mode .bg-forge-800\/90 {
+  background-color: rgba(226, 232, 240, 0.95);
+  border-color: rgba(255, 85, 0, 0.3);
+}
+
+/* Light mode - text-steel for readability on light bg */
+.light-mode .text-steel-200 {
+  color: #334155;
+}
+
+.light-mode .text-steel-300 {
+  color: #475569;
+}
+
+/* Light mode - Contact hours card needs inverted text since it's dark bg */
+.light-mode .bg-forge-900.rounded-xl .text-steel-300,
+.light-mode .bg-forge-900.rounded-xl .text-steel-400,
+.light-mode .bg-forge-900.rounded-xl .text-steel-100 {
+  color: inherit;
+}
+
+/* Light mode - Hero section specific */
+.light-mode #hero .text-steel-100 {
+  color: #1e293b !important;
+}
+
+.light-mode #hero .text-steel-400 {
+  color: #64748b !important;
+}
+
+.light-mode #hero .text-steel-500 {
+  color: #64748b !important;
+}
+
+.light-mode #hero .text-steel-600 {
+  color: #475569 !important;
+}
+
+/* Light mode - Button border */
+.light-mode .border-steel-700 {
+  border-color: #cbd5e1;
+}
+
+/* Light mode - Mobile menu should remain dark */
+.light-mode [role="dialog"].bg-void {
+  background-color: #0f172a;
+}
+
+.light-mode [role="dialog"] .text-steel-100 {
+  color: #e2e8f0;
+}
+
+.light-mode [role="dialog"] .text-steel-600 {
+  color: #94a3b8;
+}
+
+/* Light mode - Mobile backdrop */
+.light-mode .bg-void\/80 {
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+/* Light mode - Products section */
+.light-mode #products,
+.light-mode section.bg-concrete {
+  background-color: #ffffff;
+}
+
+.light-mode #products .text-forge-900,
+.light-mode #products .text-forge-800,
+.light-mode #products .text-forge-700 {
+  color: #1e293b;
+}
+
+/* Light mode - About section */
+.light-mode #about {
+  background-color: #f8fafc;
+}
+
+/* Light mode - FAQ section */
+.light-mode #faq {
+  background-color: #ffffff;
+}
+
+/* Light mode - Part Finder section on Hero */
+.light-mode .glass {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode - WhyUs marquee */
+.light-mode .bg-forge-900.rounded-2xl {
+  background-color: #1e293b;
+}
+
+/* Light mode - CTA section with specific styling */
+.light-mode section#cta,
+.light-mode .cta-section {
+  background-color: #1e293b;
+}
+
+/* Ensure light-mode navbar is visible */
+.light-mode header nav {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode header nav.shadow-lg {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode - Theme toggle button */
+.light-mode .bg-void-800\/50 {
+  background-color: rgba(241, 245, 249, 0.8);
+}
+
+.light-mode .hover\:bg-void-700\/50:hover {
+  background-color: rgba(226, 232, 240, 0.8);
+}
+
+/* Light mode - Mobile CTA bar at bottom */
+.light-mode .fixed.bottom-0.bg-forge-900\/95 {
+  background-color: rgba(30, 41, 59, 0.95);
+}
