@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
 const ThemeContext = createContext()
 
@@ -22,13 +23,21 @@ export function ThemeProvider({ children }) {
 
   useEffect(() => {
     const root = document.documentElement
+    const body = document.body
     
     if (theme === 'light') {
       root.classList.add('light-mode')
       root.classList.remove('dark-mode')
+      body.classList.add('light-mode')
+      body.classList.remove('dark-mode')
+      // Also set data attribute for more flexible CSS targeting
+      root.setAttribute('data-theme', 'light')
     } else {
       root.classList.add('dark-mode')
       root.classList.remove('light-mode')
+      body.classList.add('dark-mode')
+      body.classList.remove('light-mode')
+      root.setAttribute('data-theme', 'dark')
     }
     
     localStorage.setItem('smt-theme', theme)
@@ -53,11 +62,18 @@ export function ThemeProvider({ children }) {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark')
   }
 
+  const isDark = theme === 'dark'
+  const isLight = theme === 'light'
+
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, isDark, isLight }}>
       {children}
     </ThemeContext.Provider>
   )
+}
+
+ThemeProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export function useTheme() {

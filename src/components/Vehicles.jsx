@@ -2,19 +2,75 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { LuArrowRight, LuGlobe } from 'react-icons/lu'
-import { GiCarWheel, GiJapan } from 'react-icons/gi'
-import { FaEuroSign, FaIndustry } from 'react-icons/fa6'
-import { vehicleBrands, contact } from '../data/siteData'
+import { GiCarWheel } from 'react-icons/gi'
+import { vehicleBrands } from '../data/siteData'
+import { trackBrandClick, trackWhatsAppClick } from '../utils/analytics'
+
+// Brand logo mapping (lowercase for matching)
+const brandLogos = {
+  'toyota': '/brands/toyota.jpg',
+  'honda': '/brands/honda.jpg',
+  'nissan': '/brands/nissan.jpg',
+  'suzuki': '/brands/suzuki.jpg',
+  'mitsubishi': '/brands/mitsubishi.jpg',
+  'mazda': '/brands/mazda.jpg',
+  'subaru': '/brands/subaru.jpg',
+  'isuzu': '/brands/isuzu.jpg',
+  'bmw': '/brands/bmw.jpg',
+  'mercedes-benz': '/brands/mercedes.jpg',
+  'volkswagen': '/brands/volkswagen.jpg',
+  'audi': '/brands/audi.jpg',
+  'peugeot': '/brands/peugeot.jpg',
+  'volvo': '/brands/volvo.jpg',
+  'tata': '/brands/tata.jpg',
+  'mahindra': '/brands/mahindra.jpg',
+  'maruti suzuki': '/brands/suzuki.jpg',
+  'hyundai': '/brands/hyundai.jpg',
+  'kia': '/brands/kia.jpg',
+}
+
+// Custom colored icons for each region
+const JapanIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+    <circle cx="12" cy="12" r="10" fill="#FFFFFF" stroke="#DC2626" strokeWidth="1"/>
+    <circle cx="12" cy="12" r="4" fill="#DC2626"/>
+  </svg>
+)
+
+const EuroIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" className={className}>
+    <circle cx="12" cy="12" r="10" fill="#003399"/>
+    <g fill="#FFCC00">
+      {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((angle, i) => (
+        <polygon
+          key={i}
+          points="12,4 12.5,6 14,6 13,7.5 13.5,9 12,8 10.5,9 11,7.5 10,6 11.5,6"
+          transform={`rotate(${angle} 12 12)`}
+          style={{ transformOrigin: '12px 12px' }}
+        />
+      ))}
+    </g>
+  </svg>
+)
+
+const IndiaIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" className={className}>
+    <rect x="2" y="5" width="20" height="4.67" fill="#FF9933"/>
+    <rect x="2" y="9.67" width="20" height="4.67" fill="#FFFFFF"/>
+    <rect x="2" y="14.33" width="20" height="4.67" fill="#138808"/>
+    <circle cx="12" cy="12" r="2" fill="#000080" fillOpacity="0.8"/>
+  </svg>
+)
 
 // Icon mapping for regions
 const regionIcons = {
-  japanese: GiJapan,
-  european: FaEuroSign,
-  indian: FaIndustry,
+  japanese: JapanIcon,
+  european: EuroIcon,
+  indian: IndiaIcon,
 }
 
 export default function Vehicles() {
-  const [selectedBrand, setSelectedBrand] = useState(null)
+  const [, setSelectedBrand] = useState(null)
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -41,14 +97,16 @@ export default function Vehicles() {
 
   const handleBrandClick = (brand) => {
     setSelectedBrand(brand)
+    trackBrandClick(brand)
     const message = `Hi! I need parts for my ${brand}. Can you help?`
+    trackWhatsAppClick('brand_inquiry', message)
     window.open(`https://wa.me/94704344855?text=${encodeURIComponent(message)}`, '_blank')
   }
 
   const regions = Object.entries(vehicleBrands)
 
   return (
-    <section className="py-20 lg:py-28 bg-forge-900 relative overflow-hidden">
+    <section id="vehicles" className="py-20 lg:py-28 bg-forge-900 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 blueprint-grid opacity-20" />
       
@@ -129,19 +187,49 @@ export default function Vehicles() {
                 </div>
 
                 {/* Brands */}
-                <div className="p-6">
-                  <div className="flex flex-wrap gap-2">
-                    {region.brands.map((brand) => (
-                      <motion.button
-                        key={brand}
-                        onClick={() => handleBrandClick(brand)}
-                        className="px-4 py-2.5 rounded-lg bg-forge-700/50 text-steel-300 font-tech text-sm font-medium border border-steel-600/30 transition-all duration-300 hover:bg-ignition-600 hover:text-white hover:border-ignition-500"
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        {brand}
-                      </motion.button>
-                    ))}
+                <div className="p-4 sm:p-6">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
+                    {region.brands.map((brand) => {
+                      const logoPath = brandLogos[brand.toLowerCase()]
+                      return (
+                        <motion.button
+                          key={brand}
+                          onClick={() => handleBrandClick(brand)}
+                          className="group/brand flex flex-col items-center gap-1.5 sm:gap-2 p-2 rounded-xl bg-white border border-steel-600/20 transition-all duration-300 hover:border-ignition-500 hover:shadow-lg hover:shadow-ignition-500/20"
+                          whileHover={{ scale: 1.03, y: -3 }}
+                          whileTap={{ scale: 0.97 }}
+                        >
+                          {logoPath ? (
+                            <div className="w-full h-10 sm:h-14 flex items-center justify-center p-1.5 sm:p-2">
+                              <img 
+                                src={logoPath}
+                                alt={`${brand} logo`}
+                                width={80}
+                                height={48}
+                                className="max-w-full max-h-full object-contain"
+                                loading="lazy"
+                                onError={(e) => {
+                                  e.target.style.display = 'none'
+                                  e.target.nextSibling.style.display = 'flex'
+                                }}
+                              />
+                              <span className="hidden text-forge-800 font-tech text-xs sm:text-sm font-semibold">
+                                {brand}
+                              </span>
+                            </div>
+                          ) : (
+                            <div className="w-full h-10 sm:h-14 flex items-center justify-center">
+                              <span className="text-forge-800 font-tech text-xs sm:text-sm font-semibold">
+                                {brand}
+                              </span>
+                            </div>
+                          )}
+                          <span className="font-tech text-[10px] sm:text-xs text-forge-600 group-hover/brand:text-ignition-600 transition-colors pb-0.5 sm:pb-1 truncate max-w-full">
+                            {brand}
+                          </span>
+                        </motion.button>
+                      )
+                    })}
                   </div>
                 </div>
 

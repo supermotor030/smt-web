@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { LuQuote, LuChevronLeft, LuChevronRight, LuCheck } from 'react-icons/lu'
@@ -12,6 +12,16 @@ export default function Testimonials() {
     threshold: 0.2,
     triggerOnce: true,
   })
+
+  // Memoize particle positions
+  const particles = useMemo(() => 
+    Array.from({ length: 10 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      duration: 4 + Math.random() * 2,
+      delay: Math.random() * 2,
+    })), [])
 
   // Auto-scroll
   useEffect(() => {
@@ -34,22 +44,22 @@ export default function Testimonials() {
     <section className="py-20 lg:py-28 bg-forge-900 relative overflow-hidden">
       {/* Background particles */}
       <div className="absolute inset-0">
-        {[...Array(10)].map((_, i) => (
+        {particles.map((particle) => (
           <motion.div
-            key={i}
+            key={particle.id}
             className="absolute w-1 h-1 bg-ignition-600/30 rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
             }}
             animate={{
               y: [0, -30, 0],
               opacity: [0.3, 0.6, 0.3],
             }}
             transition={{
-              duration: 4 + Math.random() * 2,
+              duration: particle.duration,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: particle.delay,
             }}
           />
         ))}
@@ -90,7 +100,7 @@ export default function Testimonials() {
               animate={{ x: `-${currentIndex * 100}%` }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             >
-              {testimonials.map((testimonial, index) => (
+              {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
                   className="w-full flex-shrink-0 px-4"

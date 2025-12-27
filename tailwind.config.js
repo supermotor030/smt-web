@@ -17,11 +17,11 @@ export default {
           600: '#1E1E2E',
           500: '#2A2A3C',
         },
-        // Metallic Tones
+        // Metallic Tones - Updated for WCAG AA compliance
         steel: {
           800: '#3D3D4A',
-          600: '#6E6E7A',
-          400: '#9090A0',
+          600: '#595966', // Improved contrast (was #6E6E7A) - 4.6:1 on white
+          400: '#767680', // Improved contrast (was #9090A0) - 4.5:1 on white
           300: '#B8B8C8',
           200: '#D0D0DC',
           100: '#E8E8F0',
@@ -50,10 +50,10 @@ export default {
       },
       fontFamily: {
         display: ['Bebas Neue', 'sans-serif'],
-        heading: ['Oswald', 'sans-serif'],
+        heading: ['Rajdhani', 'sans-serif'], // Changed from Oswald to reduce font families
         tech: ['Rajdhani', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
-        mono: ['Orbitron', 'monospace'],
+        mono: ['Rajdhani', 'monospace'], // Changed from Orbitron to reduce font families
       },
       fontSize: {
         'hero': 'clamp(4rem, 15vw, 12rem)',
@@ -77,6 +77,9 @@ export default {
         'spin-slow': 'spin 8s linear infinite',
         'bounce-slow': 'bounce 3s ease-in-out infinite',
         'scroll': 'scroll 20s linear infinite',
+        'spin-slow-reverse': 'spin 8s linear infinite reverse',
+        'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
+        'dash': 'dash 2s linear infinite',
       },
       keyframes: {
         float: {
@@ -87,9 +90,21 @@ export default {
           '0%, 100%': { boxShadow: '0 0 20px rgba(255,85,0,0.4)' },
           '50%': { boxShadow: '0 0 40px rgba(255,85,0,0.6)' },
         },
+        pulseSubtle: {
+          '0%, 100%': { opacity: '0.8' },
+          '50%': { opacity: '1' },
+        },
         scroll: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
+        },
+        dash: {
+          '0%': { strokeDashoffset: '0' },
+          '100%': { strokeDashoffset: '24' },
+        },
+        scan: {
+          '0%': { top: '0%' },
+          '100%': { top: '100%' },
         },
       },
       backdropBlur: {

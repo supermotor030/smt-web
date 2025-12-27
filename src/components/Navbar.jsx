@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { GiSpanner } from 'react-icons/gi'
 import { LuPhone, LuMenu, LuX } from 'react-icons/lu'
 import { navLinks, contact } from '../data/siteData'
 import OpenClosedStatus from './OpenClosedStatus'

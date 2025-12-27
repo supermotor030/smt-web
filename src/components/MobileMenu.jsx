@@ -92,7 +92,7 @@ export default function MobileMenu({ onClose }) {
           {/* Navigation Links */}
           <nav className="flex-1">
             <ul className="space-y-1">
-              {navLinks.map((link, index) => (
+              {navLinks.map((link) => (
                 <motion.li
                   key={link.id}
                   variants={itemVariants}

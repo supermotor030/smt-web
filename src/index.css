@@ -16,6 +16,14 @@
 
   body {
     @apply bg-void text-steel-100 font-body overflow-x-hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Dark mode (default) */
+  html.dark-mode body,
+  body.dark-mode {
+    background-color: #0d0f14;
+    color: #e2e8f0;
   }
 
   /* Custom scrollbar */
@@ -40,9 +48,19 @@
     @apply bg-ignition-600/30 text-white;
   }
 
-  /* Focus visible */
+  /* Focus visible - Enhanced for accessibility */
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-ignition-500;
+  }
+
+  /* Focus visible for buttons and interactive elements */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [role="button"]:focus-visible {
+    @apply outline-2 outline-offset-2 outline-ignition-500 ring-2 ring-ignition-500/30;
   }
 
   /* Skip to main content link */
@@ -206,6 +224,15 @@
   .cursor-none {
     cursor: none;
   }
+
+  /* Safe area padding for notched devices (iPhone etc.) */
+  .safe-area-pb {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+
+  .safe-area-pt {
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+  }
 }
 
 /* Reduced motion */
@@ -220,6 +247,41 @@
   }
 }
 
+/* Turbo Mode Easter Egg - 5 logo clicks activates! */
+.turbo-mode {
+  animation: turbo-shake 0.1s infinite;
+}
+
+.turbo-mode * {
+  transition-duration: 0.1s !important;
+}
+
+.turbo-mode::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 85, 0, 0.1) 0%,
+    transparent 50%,
+    rgba(255, 85, 0, 0.1) 100%
+  );
+  pointer-events: none;
+  z-index: 9998;
+  animation: turbo-glow 0.5s infinite;
+}
+
+@keyframes turbo-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+@keyframes turbo-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
 /* Print styles */
 @media print {
   body {
@@ -232,7 +294,9 @@
 }
 
 /* Light Mode Theme Overrides */
-.light-mode body {
+/* Support both html.light-mode and body.light-mode */
+html.light-mode,
+body.light-mode {
   background-color: #f8fafc;
   color: #1e293b;
 }
@@ -431,14 +495,14 @@
 }
 
 /* Light mode - Footer should remain dark themed */
-.light-mode footer.bg-void,
-.light-mode footer {
-  background-color: #0f172a !important;
+.light-mode footer,
+.light-mode footer.bg-forge-950 {
+  background-color: #030712 !important;
 }
 
 /* Light mode - Footer text stays in original light colors (dark theme) */
 .light-mode footer .text-steel-100 {
-  color: #e2e8f0 !important;
+  color: #f1f5f9 !important;
 }
 
 .light-mode footer .text-steel-300 {
@@ -462,7 +526,7 @@
 }
 
 .light-mode footer .bg-forge-950 {
-  background-color: #0c0e14 !important;
+  background-color: #030712 !important;
 }
 
 .light-mode footer .border-forge-800 {
@@ -475,12 +539,14 @@
 }
 
 /* Light mode - Vehicles section stays dark */
-.light-mode #vehicles {
-  background-color: #1e293b !important;
+.light-mode #vehicles,
+.light-mode section.bg-forge-900:has(.blueprint-grid) {
+  background-color: #0f172a !important;
 }
 
-.light-mode #vehicles .text-steel-100 {
-  color: #e2e8f0 !important;
+.light-mode #vehicles .text-steel-100,
+.light-mode #vehicles .text-white {
+  color: #f1f5f9 !important;
 }
 
 .light-mode #vehicles .text-steel-200 {
@@ -493,6 +559,22 @@
 
 .light-mode #vehicles .text-steel-400 {
   color: #64748b !important;
+}
+
+.light-mode #vehicles .bg-forge-800\/50 {
+  background-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+.light-mode #vehicles .bg-forge-700\/50 {
+  background-color: rgba(51, 65, 85, 0.7) !important;
+}
+
+.light-mode #vehicles .border-steel-700\/30 {
+  border-color: rgba(71, 85, 105, 0.4) !important;
+}
+
+.light-mode #vehicles .border-steel-600\/30 {
+  border-color: rgba(71, 85, 105, 0.4) !important;
 }
 
 /* Light mode - Testimonials section stays dark */
@@ -581,15 +663,15 @@
 }
 
 /* Light mode - Mobile menu should remain dark */
-.light-mode [role="dialog"].bg-void {
+.light-mode div[role="dialog"].bg-void {
   background-color: #0f172a;
 }
 
-.light-mode [role="dialog"] .text-steel-100 {
+.light-mode div[role="dialog"] .text-steel-100 {
   color: #e2e8f0;
 }
 
-.light-mode [role="dialog"] .text-steel-600 {
+.light-mode div[role="dialog"] .text-steel-600 {
   color: #94a3b8;
 }
 
@@ -647,16 +729,423 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Light mode - Theme toggle button */
-.light-mode .bg-void-800\/50 {
-  background-color: rgba(241, 245, 249, 0.8);
-}
-
-.light-mode .hover\:bg-void-700\/50:hover {
-  background-color: rgba(226, 232, 240, 0.8);
-}
-
 /* Light mode - Mobile CTA bar at bottom */
 .light-mode .fixed.bottom-0.bg-forge-900\/95 {
   background-color: rgba(30, 41, 59, 0.95);
 }
+
+/* ============================================
+   ENHANCED ACCESSIBILITY & PERFORMANCE STYLES
+   ============================================ */
+
+/* Focus-visible outlines - Enhanced keyboard navigation */
+:focus-visible {
+  outline: 3px solid #FF5500;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* High contrast focus for interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #FF5500;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(255, 85, 0, 0.2);
+}
+
+/* Remove default focus outline - only show on focus-visible */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Skip link enhancement */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 10000;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #FF5500 0%, #FF7A2E 100%);
+  color: white;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 0 0 12px 12px;
+  text-decoration: none;
+  transform: translateY(0);
+  transition: top 0.3s ease, transform 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: none;
+  box-shadow: 0 4px 20px rgba(255, 85, 0, 0.4);
+}
+
+/* CSS Containment for performance */
+section {
+  contain: layout style;
+}
+
+.contain-strict {
+  contain: strict;
+}
+
+.contain-content {
+  contain: content;
+}
+
+.contain-paint {
+  contain: paint;
+}
+
+/* Content visibility for lazy rendering */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* WCAG AAA Color Contrast Improvements */
+/* Ensure minimum 7:1 contrast ratio for normal text */
+.text-high-contrast {
+  color: #1a1a1a;
+}
+
+.dark-mode .text-high-contrast,
+html:not(.light-mode) .text-high-contrast {
+  color: #ffffff;
+}
+
+/* Enhanced link contrast */
+.light-mode a:not([class]) {
+  color: #c44000;
+}
+
+.light-mode a:not([class]):hover {
+  color: #a03500;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Pull-to-refresh indicator */
+.pull-to-refresh {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  z-index: 9999;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #FF5500 0%, #FF7A2E 100%);
+  color: white;
+  border-radius: 0 0 16px 16px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: transform 0.3s ease;
+}
+
+.pull-to-refresh.visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Haptic feedback visual indicator */
+@keyframes haptic-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.98); }
+}
+
+.haptic-feedback:active {
+  animation: haptic-pulse 0.1s ease;
+}
+
+/* Swipe gesture hint */
+.swipe-hint {
+  position: relative;
+}
+
+.swipe-hint::after {
+  content: '← Swipe →';
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #64748b;
+  font-family: 'Share Tech Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swipe-hint:hover::after {
+  opacity: 1;
+}
+
+/* Shimmer loading animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    #1e293b 25%,
+    #334155 50%,
+    #1e293b 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.light-mode .shimmer {
+  background: linear-gradient(
+    90deg,
+    #e2e8f0 25%,
+    #f1f5f9 50%,
+    #e2e8f0 75%
+  );
+  background-size: 200% 100%;
+}
+
+/* Parallax container */
+.parallax-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.parallax-element {
+  will-change: transform;
+}
+
+/* Micro-interaction: Card hover lift */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .hover-lift:hover,
+html:not(.light-mode) .hover-lift:hover {
+  box-shadow: 0 12px 40px rgba(255, 85, 0, 0.1);
+}
+
+/* Micro-interaction: Button press */
+.press-effect {
+  transition: transform 0.1s ease;
+}
+
+.press-effect:active {
+  transform: scale(0.97);
+}
+
+/* Note: font-display: swap should be added to actual @font-face declarations
+   or configured in the font loading strategy (Google Fonts URL params) */
+
+/* Prefers contrast - high contrast mode */
+@media (prefers-contrast: high) {
+  :root {
+    --ignition-500: #ff4400;
+    --steel-400: #000000;
+  }
+
+  .light-mode {
+    --steel-100: #000000;
+  }
+
+  button, a {
+    border: 2px solid currentColor !important;
+  }
+}
+
+/* Forced colors mode support */
+@media (forced-colors: active) {
+  .gradient-text {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: LinkText;
+  }
+
+  button {
+    border: 2px solid ButtonText;
+  }
+}
+
+/* ============================================
+   COMPREHENSIVE LIGHT MODE FIXES
+   ============================================ */
+
+/* Light mode - ServiceGuarantees section stays dark */
+.light-mode section.bg-forge-900:has(.grid) {
+  background-color: #1e293b !important;
+}
+
+.light-mode section.bg-forge-900 .text-white {
+  color: #ffffff !important;
+}
+
+.light-mode section.bg-forge-900 .text-steel-400 {
+  color: #94a3b8 !important;
+}
+
+/* Light mode - Stats section */
+.light-mode section.bg-snow {
+  background-color: #f8fafc !important;
+}
+
+.light-mode .shadow-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Light mode - WhyUs section */
+.light-mode section.bg-concrete {
+  background-color: #f1f5f9 !important;
+}
+
+.light-mode section.bg-concrete .text-forge-900 {
+  color: #0f172a !important;
+}
+
+.light-mode section.bg-concrete .text-forge-700 {
+  color: #334155 !important;
+}
+
+.light-mode section.bg-concrete .text-steel-600 {
+  color: #475569 !important;
+}
+
+/* Light mode - Part Finder section in Hero */
+.light-mode #hero .bg-forge-900\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode #hero .bg-forge-900\/95 .text-steel-100 {
+  color: #1e293b !important;
+}
+
+.light-mode #hero .bg-forge-900\/95 .text-steel-400 {
+  color: #64748b !important;
+}
+
+/* Light mode - Cards with dark backgrounds stay dark */
+.light-mode .bg-forge-800\/50,
+.light-mode .bg-forge-900\/80 {
+  background-color: rgba(30, 41, 59, 0.9) !important;
+}
+
+/* Light mode - PriceQuoteCalculator */
+.light-mode #price-calculator .text-steel-100 {
+  color: #1e293b !important;
+}
+
+.light-mode #price-calculator .text-steel-400 {
+  color: #64748b !important;
+}
+
+/* Light mode - PartFinder */
+.light-mode .text-forge-800 {
+  color: #1e293b !important;
+}
+
+/* Light mode - MechanicMascot */
+.light-mode .fixed.bottom-28 .bg-forge-900,
+.light-mode .fixed.bottom-28 .bg-forge-800 {
+  background-color: #1e293b !important;
+}
+
+/* Light mode - Navbar text */
+.light-mode header nav .text-steel-100 {
+  color: #1e293b !important;
+}
+
+.light-mode header nav .text-steel-300 {
+  color: #475569 !important;
+}
+
+/* Light mode - Mobile bottom nav stays dark */
+.light-mode .fixed.bottom-0.left-0.right-0 {
+  background-color: rgba(15, 23, 42, 0.98) !important;
+}
+
+/* Light mode - BackToTop button */
+.light-mode button.fixed.bottom-44,
+.light-mode button.fixed.lg\\:bottom-6 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #e2e8f0 !important;
+  color: #ff5500 !important;
+}
+
+/* Light mode - Scroll progress bar */
+.light-mode .fixed.top-0.left-0.h-1 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Light mode - ensure ignition colors stay vibrant */
+.light-mode .text-ignition-500,
+.light-mode .text-ignition-600 {
+  color: #ff5500 !important;
+}
+
+.light-mode .bg-ignition-500,
+.light-mode .bg-ignition-600 {
+  background-color: #ff5500 !important;
+}
+
+/* Light mode - Input fields */
+.light-mode input,
+.light-mode textarea,
+.light-mode select {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+.light-mode input::placeholder,
+.light-mode textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Light mode - dropdown/select */
+.light-mode .bg-forge-800 {
+  background-color: #ffffff !important;
+}
+
+.light-mode .border-forge-700 {
+  border-color: #e2e8f0 !important;
+}
+
+

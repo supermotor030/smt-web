@@ -1,0 +1,995 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Skip to main content" [ref=e4] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=e5]:
+      - navigation "Main navigation" [ref=e6]:
+        - generic [ref=e7]:
+          - link "Super Motor Trading SUPER MOTOR TRADING" [ref=e8] [cursor=pointer]:
+            - /url: "#home"
+            - img "Super Motor Trading" [ref=e9]
+            - generic [ref=e10]:
+              - generic [ref=e11]: SUPER MOTOR
+              - generic [ref=e12]: TRADING
+          - button "Open menu" [ref=e13] [cursor=pointer]:
+            - img [ref=e15]
+    - main [ref=e16]:
+      - region "Hero section - Welcome to Super Motor Trading" [ref=e17]:
+        - generic [ref=e24]:
+          - generic [ref=e30]: YOUR TRUSTED AUTOMOTIVE PARTNER
+          - heading "PRECISION ENGINEERED EXCELLENCE" [level=1] [ref=e32]:
+            - generic [ref=e33]: PRECISION
+            - generic [ref=e34]: ENGINEERED
+            - generic [ref=e35]: EXCELLENCE
+          - img [ref=e38]
+          - generic [ref=e43]: PRECISION PART
+          - paragraph [ref=e45]: Sri Lanka's trusted source for genuine spare parts. Premium quality components for Japanese, European & Indian vehicles.
+          - generic [ref=e50]:
+            - img "Engine illustration" [ref=e51]:
+              - generic [ref=e62]: SMT
+              - generic [ref=e63]: GENUINE
+            - generic [ref=e101]:
+              - generic [ref=e102]:
+                - generic [ref=e103]: 5000+
+                - generic [ref=e104]: Parts
+              - generic [ref=e106]:
+                - generic [ref=e107]: 50+
+                - generic [ref=e108]: Brands
+          - generic [ref=e109]:
+            - link "Contact us on WhatsApp" [ref=e110] [cursor=pointer]:
+              - /url: https://wa.me/94704344855?text=Hello!%20I'm%20interested%20in%20spare%20parts.
+              - img [ref=e112]
+              - generic [ref=e114]: WhatsApp Now
+            - link "Browse our spare parts catalog" [ref=e115] [cursor=pointer]:
+              - /url: "#products"
+              - img [ref=e117]
+              - generic [ref=e119]: Browse Parts
+              - img [ref=e120]
+          - list "Key features" [ref=e122]:
+            - listitem [ref=e123]:
+              - img [ref=e125]
+              - generic [ref=e127]: 100% Genuine
+            - listitem [ref=e128]:
+              - img [ref=e130]
+              - generic [ref=e132]: Expert Advice
+            - listitem [ref=e133]:
+              - img [ref=e135]
+              - generic [ref=e138]: Fast Service
+        - generic [ref=e139]:
+          - generic [ref=e140]: Scroll
+          - button "Scroll to About section" [ref=e141] [cursor=pointer]:
+            - img [ref=e142]
+      - generic [ref=e147]:
+        - generic [ref=e153]:
+          - generic [ref=e154]: 0%
+          - text: GENUINE PARTS
+        - generic [ref=e161]:
+          - generic [ref=e162]: 0+
+          - text: PARTS IN STOCK
+        - generic [ref=e169]:
+          - generic [ref=e170]: 0+
+          - text: HAPPY CUSTOMERS
+        - generic [ref=e177]:
+          - generic [ref=e178]: 0/7
+          - text: DAYS OPEN
+      - generic [ref=e182]:
+        - generic [ref=e183]:
+          - img [ref=e189]
+          - generic [ref=e193]:
+            - text: 100%
+            - generic [ref=e194]: Genuine
+        - generic [ref=e195]:
+          - generic [ref=e196]:
+            - img [ref=e197]
+            - generic [ref=e199]: About Us
+          - heading "BUILT ON EXPERTISE. DRIVEN BY PASSION." [level=2] [ref=e200]:
+            - text: BUILT ON EXPERTISE.
+            - text: DRIVEN BY PASSION.
+          - paragraph [ref=e202]:
+            - strong [ref=e203]: Super Motor Trading
+            - text: is Sri Lanka's trusted source for genuine vehicle spare parts. Located in Kadawatha, we serve mechanics, workshops, and car enthusiasts across the island.
+          - paragraph [ref=e204]: Our commitment to quality means you get authentic OEM parts and premium aftermarket alternatives at competitive prices. We have the expertise to know exactly what your vehicle needs.
+          - generic [ref=e205]:
+            - generic [ref=e206]:
+              - img [ref=e208]
+              - generic [ref=e210]: OEM & Aftermarket Parts
+            - generic [ref=e211]:
+              - img [ref=e213]
+              - generic [ref=e215]: Japanese, European & Indian
+            - generic [ref=e216]:
+              - img [ref=e218]
+              - generic [ref=e220]: Professional Consultation
+            - generic [ref=e221]:
+              - img [ref=e223]
+              - generic [ref=e225]: Islandwide Delivery
+          - link "Get In Touch" [ref=e227] [cursor=pointer]:
+            - /url: "#contact"
+            - text: Get In Touch
+            - img [ref=e228]
+      - region "Supported vehicle brands" [ref=e230]:
+        - generic [ref=e232]:
+          - text: Trusted By Drivers Across Sri Lanka
+          - heading "Parts for All Major Brands" [level=3] [ref=e233]
+        - generic [ref=e237]:
+          - generic [ref=e239]:
+            - generic [ref=e240]: T
+            - generic [ref=e241]: Toyota
+          - generic [ref=e243]:
+            - generic [ref=e244]: H
+            - generic [ref=e245]: Honda
+          - generic [ref=e247]:
+            - generic [ref=e248]: "N"
+            - generic [ref=e249]: Nissan
+          - generic [ref=e251]:
+            - generic [ref=e252]: S
+            - generic [ref=e253]: Suzuki
+          - generic [ref=e255]:
+            - generic [ref=e256]: M
+            - generic [ref=e257]: Mitsubishi
+          - generic [ref=e259]:
+            - generic [ref=e260]: M
+            - generic [ref=e261]: Mazda
+          - generic [ref=e263]:
+            - generic [ref=e264]: B
+            - generic [ref=e265]: BMW
+          - generic [ref=e267]:
+            - generic [ref=e268]: M
+            - generic [ref=e269]: Mercedes
+          - generic [ref=e271]:
+            - generic [ref=e272]: A
+            - generic [ref=e273]: Audi
+          - generic [ref=e275]:
+            - generic [ref=e276]: V
+            - generic [ref=e277]: Volkswagen
+          - generic [ref=e279]:
+            - generic [ref=e280]: H
+            - generic [ref=e281]: Hyundai
+          - generic [ref=e283]:
+            - generic [ref=e284]: K
+            - generic [ref=e285]: Kia
+          - generic [ref=e287]:
+            - generic [ref=e288]: T
+            - generic [ref=e289]: TATA
+          - generic [ref=e291]:
+            - generic [ref=e292]: M
+            - generic [ref=e293]: Mahindra
+          - generic [ref=e295]:
+            - generic [ref=e296]: S
+            - generic [ref=e297]: Subaru
+          - generic [ref=e299]:
+            - generic [ref=e300]: I
+            - generic [ref=e301]: Isuzu
+          - generic [ref=e303]:
+            - generic [ref=e304]: T
+            - generic [ref=e305]: Toyota
+          - generic [ref=e307]:
+            - generic [ref=e308]: H
+            - generic [ref=e309]: Honda
+          - generic [ref=e311]:
+            - generic [ref=e312]: "N"
+            - generic [ref=e313]: Nissan
+          - generic [ref=e315]:
+            - generic [ref=e316]: S
+            - generic [ref=e317]: Suzuki
+          - generic [ref=e319]:
+            - generic [ref=e320]: M
+            - generic [ref=e321]: Mitsubishi
+          - generic [ref=e323]:
+            - generic [ref=e324]: M
+            - generic [ref=e325]: Mazda
+          - generic [ref=e327]:
+            - generic [ref=e328]: B
+            - generic [ref=e329]: BMW
+          - generic [ref=e331]:
+            - generic [ref=e332]: M
+            - generic [ref=e333]: Mercedes
+          - generic [ref=e335]:
+            - generic [ref=e336]: A
+            - generic [ref=e337]: Audi
+          - generic [ref=e339]:
+            - generic [ref=e340]: V
+            - generic [ref=e341]: Volkswagen
+          - generic [ref=e343]:
+            - generic [ref=e344]: H
+            - generic [ref=e345]: Hyundai
+          - generic [ref=e347]:
+            - generic [ref=e348]: K
+            - generic [ref=e349]: Kia
+          - generic [ref=e351]:
+            - generic [ref=e352]: T
+            - generic [ref=e353]: TATA
+          - generic [ref=e355]:
+            - generic [ref=e356]: M
+            - generic [ref=e357]: Mahindra
+          - generic [ref=e359]:
+            - generic [ref=e360]: S
+            - generic [ref=e361]: Subaru
+          - generic [ref=e363]:
+            - generic [ref=e364]: I
+            - generic [ref=e365]: Isuzu
+        - generic [ref=e367]:
+          - generic [ref=e368]:
+            - text: 16+
+            - paragraph [ref=e369]: Brands Supported
+          - generic [ref=e371]:
+            - text: 5000+
+            - paragraph [ref=e372]: Parts Available
+          - generic [ref=e374]:
+            - text: 100%
+            - paragraph [ref=e375]: Genuine Quality
+      - generic [ref=e377]:
+        - generic [ref=e378]:
+          - generic [ref=e379]:
+            - img [ref=e380]
+            - generic [ref=e382]: Our Products
+          - heading "QUALITY PARTS FOR EVERY SYSTEM" [level=2] [ref=e383]
+        - generic [ref=e388]:
+          - button "View Engine Parts details" [ref=e389] [cursor=pointer]:
+            - generic [ref=e394]:
+              - img [ref=e396]
+              - heading "Engine Parts" [level=3] [ref=e398]
+              - paragraph [ref=e399]: "\"Heart of your vehicle\""
+              - paragraph [ref=e401]: Pistons • Gaskets • Valves
+              - button "Inquire Now" [ref=e402]:
+                - text: Inquire Now
+                - img [ref=e403]
+          - button "View Brake System details" [ref=e405] [cursor=pointer]:
+            - generic [ref=e410]:
+              - img [ref=e412]
+              - heading "Brake System" [level=3] [ref=e415]
+              - paragraph [ref=e416]: "\"Stop with confidence\""
+              - paragraph [ref=e418]: Brake Pads • Discs & Rotors • Calipers
+              - button "Inquire Now" [ref=e419]:
+                - text: Inquire Now
+                - img [ref=e420]
+          - button "View Suspension details" [ref=e422] [cursor=pointer]:
+            - generic [ref=e427]:
+              - img [ref=e429]
+              - heading "Suspension" [level=3] [ref=e431]
+              - paragraph [ref=e432]: "\"Smooth every journey\""
+              - paragraph [ref=e434]: Shock Absorbers • Bushings • Ball Joints
+              - button "Inquire Now" [ref=e435]:
+                - text: Inquire Now
+                - img [ref=e436]
+          - button "View Transmission details" [ref=e438] [cursor=pointer]:
+            - generic [ref=e443]:
+              - img [ref=e445]
+              - heading "Transmission" [level=3] [ref=e447]
+              - paragraph [ref=e448]: "\"Power to the wheels\""
+              - paragraph [ref=e450]: Gearbox Parts • Clutch Kits • CV Joints
+              - button "Inquire Now" [ref=e451]:
+                - text: Inquire Now
+                - img [ref=e452]
+          - button "View Filters details" [ref=e454] [cursor=pointer]:
+            - generic [ref=e459]:
+              - img [ref=e461]
+              - heading "Filters" [level=3] [ref=e463]
+              - paragraph [ref=e464]: "\"Keep it clean\""
+              - paragraph [ref=e466]: Oil Filters • Air Filters • Fuel Filters
+              - button "Inquire Now" [ref=e467]:
+                - text: Inquire Now
+                - img [ref=e468]
+          - button "View Cooling System details" [ref=e470] [cursor=pointer]:
+            - generic [ref=e475]:
+              - img [ref=e477]
+              - heading "Cooling System" [level=3] [ref=e479]
+              - paragraph [ref=e480]: "\"Beat the heat\""
+              - paragraph [ref=e482]: Radiators • Water Pumps • Thermostats
+              - button "Inquire Now" [ref=e483]:
+                - text: Inquire Now
+                - img [ref=e484]
+          - button "View Belts & Hoses details" [ref=e486] [cursor=pointer]:
+            - generic [ref=e491]:
+              - img [ref=e493]
+              - heading "Belts & Hoses" [level=3] [ref=e495]
+              - paragraph [ref=e496]: "\"Connected performance\""
+              - paragraph [ref=e498]: Timing Belts • V-Belts • Serpentine Belts
+              - button "Inquire Now" [ref=e499]:
+                - text: Inquire Now
+                - img [ref=e500]
+          - button "View Bearings details" [ref=e502] [cursor=pointer]:
+            - generic [ref=e507]:
+              - img [ref=e509]
+              - heading "Bearings" [level=3] [ref=e511]
+              - paragraph [ref=e512]: "\"Precision in motion\""
+              - paragraph [ref=e514]: Wheel Bearings • Hub Assemblies • Axle Bearings
+              - button "Inquire Now" [ref=e515]:
+                - text: Inquire Now
+                - img [ref=e516]
+      - generic [ref=e519]:
+        - generic [ref=e520]:
+          - generic [ref=e521]:
+            - img [ref=e522]
+            - generic [ref=e524]: Why Choose Us
+          - heading "THE SUPER MOTOR DIFFERENCE" [level=2] [ref=e525]
+        - generic [ref=e526]:
+          - generic [ref=e529]:
+            - img [ref=e531]
+            - heading "100% GENUINE PARTS" [level=3] [ref=e533]
+            - paragraph [ref=e534]: Authentic OEM & premium aftermarket from trusted global manufacturers
+          - generic [ref=e537]:
+            - img [ref=e539]
+            - heading "EXPERT KNOWLEDGE" [level=3] [ref=e541]
+            - paragraph [ref=e542]: Professional automotive expertise serving Sri Lankan drivers
+          - generic [ref=e545]:
+            - img [ref=e547]
+            - heading "COMPETITIVE PRICES" [level=3] [ref=e550]
+            - paragraph [ref=e551]: Best market rates without ever compromising on quality
+          - generic [ref=e554]:
+            - img [ref=e556]
+            - heading "MASSIVE INVENTORY" [level=3] [ref=e560]
+            - paragraph [ref=e561]: Extensive stock covering Japanese, European & Indian vehicles
+          - generic [ref=e564]:
+            - img [ref=e566]
+            - heading "ISLANDWIDE DELIVERY" [level=3] [ref=e571]
+            - paragraph [ref=e572]: Fast, reliable shipping to anywhere in Sri Lanka
+          - generic [ref=e575]:
+            - img [ref=e577]
+            - heading "EXPERT CONSULTATION" [level=3] [ref=e579]
+            - paragraph [ref=e580]: Technical advice to find exactly the right parts for your vehicle
+        - generic [ref=e583]:
+          - generic [ref=e584]:
+            - img [ref=e585]
+            - generic [ref=e587]: TRUSTED BY MECHANICS & WORKSHOPS ACROSS SRI LANKA
+            - generic [ref=e588]: •
+            - generic [ref=e589]: 100% GENUINE PARTS
+            - generic [ref=e590]: •
+            - generic [ref=e591]: GENUINE OEM & AFTERMARKET PARTS
+            - generic [ref=e592]: •
+          - generic [ref=e593]:
+            - img [ref=e594]
+            - generic [ref=e596]: TRUSTED BY MECHANICS & WORKSHOPS ACROSS SRI LANKA
+            - generic [ref=e597]: •
+            - generic [ref=e598]: 100% GENUINE PARTS
+            - generic [ref=e599]: •
+            - generic [ref=e600]: GENUINE OEM & AFTERMARKET PARTS
+            - generic [ref=e601]: •
+          - generic [ref=e602]:
+            - img [ref=e603]
+            - generic [ref=e605]: TRUSTED BY MECHANICS & WORKSHOPS ACROSS SRI LANKA
+            - generic [ref=e606]: •
+            - generic [ref=e607]: 100% GENUINE PARTS
+            - generic [ref=e608]: •
+            - generic [ref=e609]: GENUINE OEM & AFTERMARKET PARTS
+            - generic [ref=e610]: •
+          - generic [ref=e611]:
+            - img [ref=e612]
+            - generic [ref=e614]: TRUSTED BY MECHANICS & WORKSHOPS ACROSS SRI LANKA
+            - generic [ref=e615]: •
+            - generic [ref=e616]: 100% GENUINE PARTS
+            - generic [ref=e617]: •
+            - generic [ref=e618]: GENUINE OEM & AFTERMARKET PARTS
+            - generic [ref=e619]: •
+      - generic [ref=e622]:
+        - generic [ref=e623]:
+          - img [ref=e625]
+          - heading "Warranty Guaranteed" [level=3] [ref=e628]
+          - paragraph [ref=e629]: All OEM parts come with manufacturer warranty
+        - generic [ref=e630]:
+          - img [ref=e632]
+          - heading "7-Day Returns" [level=3] [ref=e637]
+          - paragraph [ref=e638]: Easy returns for unused parts in original packaging
+        - generic [ref=e639]:
+          - img [ref=e641]
+          - heading "100% Genuine" [level=3] [ref=e644]
+          - paragraph [ref=e645]: Authentic parts from certified suppliers only
+        - generic [ref=e646]:
+          - img [ref=e648]
+          - heading "Fast Delivery" [level=3] [ref=e653]
+          - paragraph [ref=e654]: Same-day dispatch for Colombo orders
+        - generic [ref=e655]:
+          - img [ref=e657]
+          - heading "Expert Support" [level=3] [ref=e659]
+          - paragraph [ref=e660]: 7 days a week technical assistance
+        - generic [ref=e661]:
+          - img [ref=e663]
+          - heading "Secure Payment" [level=3] [ref=e665]
+          - paragraph [ref=e666]: Cash, card & bank transfer accepted
+      - generic [ref=e667]:
+        - img [ref=e670]
+        - img [ref=e673]
+        - generic [ref=e675]:
+          - generic [ref=e676]:
+            - generic [ref=e677]:
+              - img [ref=e678]
+              - generic [ref=e681]: Global Coverage
+            - heading "PARTS FOR ALL MAJOR BRANDS" [level=2] [ref=e682]
+            - paragraph [ref=e683]: We stock genuine and aftermarket parts for Japanese, European, and Indian vehicles. Click on any brand to inquire about parts availability.
+          - generic [ref=e684]:
+            - generic [ref=e685]:
+              - generic [ref=e686]:
+                - img [ref=e688]
+                - generic [ref=e690]:
+                  - img [ref=e692]
+                  - generic [ref=e694]:
+                    - heading "Japanese" [level=3] [ref=e695]
+                    - paragraph [ref=e696]: 8 Brands
+              - generic [ref=e698]:
+                - button "Toyota" [ref=e699] [cursor=pointer]
+                - button "Honda" [ref=e700] [cursor=pointer]
+                - button "Nissan" [ref=e701] [cursor=pointer]
+                - button "Suzuki" [ref=e702] [cursor=pointer]
+                - button "Mitsubishi" [ref=e703] [cursor=pointer]
+                - button "Mazda" [ref=e704] [cursor=pointer]
+                - button "Subaru" [ref=e705] [cursor=pointer]
+                - button "Isuzu" [ref=e706] [cursor=pointer]
+            - generic [ref=e708]:
+              - generic [ref=e709]:
+                - img [ref=e711]
+                - generic [ref=e713]:
+                  - img [ref=e715]
+                  - generic [ref=e717]:
+                    - heading "European" [level=3] [ref=e718]
+                    - paragraph [ref=e719]: 6 Brands
+              - generic [ref=e721]:
+                - button "BMW" [ref=e722] [cursor=pointer]
+                - button "Mercedes-Benz" [ref=e723] [cursor=pointer]
+                - button "Volkswagen" [ref=e724] [cursor=pointer]
+                - button "Audi" [ref=e725] [cursor=pointer]
+                - button "Peugeot" [ref=e726] [cursor=pointer]
+                - button "Volvo" [ref=e727] [cursor=pointer]
+            - generic [ref=e729]:
+              - generic [ref=e730]:
+                - img [ref=e732]
+                - generic [ref=e734]:
+                  - img [ref=e736]
+                  - generic [ref=e738]:
+                    - heading "Indian" [level=3] [ref=e739]
+                    - paragraph [ref=e740]: 4 Brands
+              - generic [ref=e742]:
+                - button "TATA" [ref=e743] [cursor=pointer]
+                - button "Mahindra" [ref=e744] [cursor=pointer]
+                - button "Maruti Suzuki" [ref=e745] [cursor=pointer]
+                - button "Bajaj" [ref=e746] [cursor=pointer]
+          - generic [ref=e748]:
+            - paragraph [ref=e749]: Can't find your brand? We source parts for all makes and models!
+            - link "Contact Us" [ref=e750] [cursor=pointer]:
+              - /url: "#contact"
+              - text: Contact Us
+              - img [ref=e751]
+      - generic [ref=e765]:
+        - generic [ref=e766]:
+          - generic [ref=e767]:
+            - img [ref=e768]
+            - generic [ref=e771]: Testimonials
+          - heading "WHAT OUR CUSTOMERS SAY" [level=2] [ref=e772]
+        - generic [ref=e773]:
+          - generic [ref=e775]:
+            - generic [ref=e777]:
+              - generic [ref=e780]:
+                - img [ref=e781]
+                - paragraph [ref=e784]: "\"Best spare parts supplier I've worked with in 15 years. Quality parts, fair prices, and they really know their stuff!\""
+              - generic [ref=e785]:
+                - img [ref=e786]
+                - img [ref=e788]
+                - img [ref=e790]
+                - img [ref=e792]
+                - img [ref=e794]
+              - generic [ref=e796]:
+                - generic [ref=e797]: KP
+                - generic [ref=e798]:
+                  - paragraph [ref=e799]: Kasun Perera
+                  - paragraph [ref=e800]: Workshop Owner, Colombo
+              - generic [ref=e801]:
+                - img [ref=e802]
+                - generic [ref=e804]: Verified
+            - generic [ref=e807]:
+              - generic [ref=e810]:
+                - img [ref=e811]
+                - paragraph [ref=e814]: "\"Found rare parts for my classic Corolla that no one else had. Super Motor Trading is now my only choice.\""
+              - generic [ref=e815]:
+                - img [ref=e816]
+                - img [ref=e818]
+                - img [ref=e820]
+                - img [ref=e822]
+                - img [ref=e824]
+              - generic [ref=e826]:
+                - generic [ref=e827]: AS
+                - generic [ref=e828]:
+                  - paragraph [ref=e829]: Anura Silva
+                  - paragraph [ref=e830]: Toyota Enthusiast
+              - generic [ref=e831]:
+                - img [ref=e832]
+                - generic [ref=e834]: Verified
+            - generic [ref=e837]:
+              - generic [ref=e840]:
+                - img [ref=e841]
+                - paragraph [ref=e844]: "\"Managing 50+ vehicles is tough. These guys always deliver genuine parts on time. Absolutely reliable!\""
+              - generic [ref=e845]:
+                - img [ref=e846]
+                - img [ref=e848]
+                - img [ref=e850]
+                - img [ref=e852]
+                - img [ref=e854]
+              - generic [ref=e856]:
+                - generic [ref=e857]: NF
+                - generic [ref=e858]:
+                  - paragraph [ref=e859]: Nimali Fernando
+                  - paragraph [ref=e860]: Fleet Manager, Kandy
+              - generic [ref=e861]:
+                - img [ref=e862]
+                - generic [ref=e864]: Verified
+            - generic [ref=e867]:
+              - generic [ref=e870]:
+                - img [ref=e871]
+                - paragraph [ref=e874]: "\"European parts at reasonable prices? I didn't believe it until I found Super Motor. Zero compromises.\""
+              - generic [ref=e875]:
+                - img [ref=e876]
+                - img [ref=e878]
+                - img [ref=e880]
+                - img [ref=e882]
+                - img [ref=e884]
+              - generic [ref=e886]:
+                - generic [ref=e887]: RJ
+                - generic [ref=e888]:
+                  - paragraph [ref=e889]: Roshan Jayawardena
+                  - paragraph [ref=e890]: BMW Owner
+              - generic [ref=e891]:
+                - img [ref=e892]
+                - generic [ref=e894]: Verified
+          - generic [ref=e896]:
+            - button "Previous testimonial" [ref=e897] [cursor=pointer]:
+              - img [ref=e898]
+            - generic [ref=e900]:
+              - button "Go to testimonial 1" [ref=e901] [cursor=pointer]
+              - button "Go to testimonial 2" [ref=e902] [cursor=pointer]
+              - button "Go to testimonial 3" [ref=e903] [cursor=pointer]
+              - button "Go to testimonial 4" [ref=e904] [cursor=pointer]
+            - button "Next testimonial" [ref=e905] [cursor=pointer]:
+              - img [ref=e906]
+      - generic [ref=e913]:
+        - generic [ref=e914]:
+          - generic [ref=e915]:
+            - img [ref=e916]
+            - generic [ref=e918]: Part Finder
+          - heading "FIND YOUR PART INSTANTLY" [level=2] [ref=e919]
+          - paragraph [ref=e920]: Select your vehicle and category to get started
+        - generic [ref=e921]:
+          - generic [ref=e922]:
+            - generic [ref=e923]:
+              - generic [ref=e924]: Vehicle Brand
+              - generic [ref=e925]:
+                - combobox [ref=e926] [cursor=pointer]:
+                  - option "Select Brand" [selected]
+                  - option "Toyota"
+                  - option "Honda"
+                  - option "Nissan"
+                  - option "Suzuki"
+                  - option "Mitsubishi"
+                  - option "Mazda"
+                  - option "Subaru"
+                  - option "Isuzu"
+                  - option "BMW"
+                  - option "Mercedes-Benz"
+                  - option "Volkswagen"
+                  - option "Audi"
+                  - option "Peugeot"
+                  - option "Volvo"
+                  - option "TATA"
+                  - option "Mahindra"
+                  - option "Maruti Suzuki"
+                  - option "Bajaj"
+                - img
+            - generic [ref=e927]:
+              - generic [ref=e928]: Category
+              - generic [ref=e929]:
+                - combobox [ref=e930] [cursor=pointer]:
+                  - option "Select Category" [selected]
+                  - option "Engine Parts"
+                  - option "Brake System"
+                  - option "Suspension"
+                  - option "Transmission"
+                  - option "Filters"
+                  - option "Cooling System"
+                  - option "Belts & Hoses"
+                  - option "Bearings"
+                - img
+          - button "SELECT A BRAND OR CATEGORY" [disabled] [ref=e931]:
+            - img [ref=e932]
+            - generic [ref=e935]: SELECT A BRAND OR CATEGORY
+        - generic [ref=e936]:
+          - paragraph [ref=e937]: "Popular searches:"
+          - generic [ref=e938]:
+            - button "Brake Pads" [ref=e939] [cursor=pointer]
+            - button "Oil Filters" [ref=e940] [cursor=pointer]
+            - button "Timing Belts" [ref=e941] [cursor=pointer]
+            - button "Clutch Kits" [ref=e942] [cursor=pointer]
+            - button "Shock Absorbers" [ref=e943] [cursor=pointer]
+        - generic [ref=e945]:
+          - paragraph [ref=e946]: Can't find the part you're looking for?
+          - button "REQUEST A PART" [ref=e947] [cursor=pointer]:
+            - img [ref=e948]
+            - text: REQUEST A PART
+      - generic [ref=e955]:
+        - generic [ref=e956]:
+          - generic [ref=e957]:
+            - img [ref=e958]
+            - generic [ref=e960]: FAQ
+          - heading "FREQUENTLY ASKED QUESTIONS" [level=2] [ref=e961]
+        - generic [ref=e962]:
+          - generic [ref=e970]:
+            - button "Do you offer warranties on parts?" [ref=e972] [cursor=pointer]:
+              - img [ref=e974]
+              - heading "Do you offer warranties on parts?" [level=3] [ref=e976]
+              - img [ref=e978]
+            - button "How fast is delivery?" [ref=e980] [cursor=pointer]:
+              - img [ref=e982]
+              - heading "How fast is delivery?" [level=3] [ref=e984]
+              - img [ref=e986]
+            - button "Can I return parts if they don't fit?" [ref=e988] [cursor=pointer]:
+              - img [ref=e990]
+              - heading "Can I return parts if they don't fit?" [level=3] [ref=e992]
+              - img [ref=e994]
+            - button "Do you source hard-to-find parts?" [ref=e996] [cursor=pointer]:
+              - img [ref=e998]
+              - heading "Do you source hard-to-find parts?" [level=3] [ref=e1000]
+              - img [ref=e1002]
+            - button "Do you offer installation services?" [ref=e1004] [cursor=pointer]:
+              - img [ref=e1006]
+              - heading "Do you offer installation services?" [level=3] [ref=e1008]
+              - img [ref=e1010]
+          - generic [ref=e1011]:
+            - paragraph [ref=e1012]: Still have questions? We're here to help!
+            - link "Chat with Us" [ref=e1013] [cursor=pointer]:
+              - /url: https://wa.me/94704344855?text=Hello!%20I'm%20interested%20in%20spare%20parts.
+              - img [ref=e1014]
+              - text: Chat with Us
+      - generic [ref=e1021]:
+        - generic [ref=e1022]:
+          - generic [ref=e1023]:
+            - img [ref=e1024]
+            - generic [ref=e1026]: Instant Quote
+          - heading "GET A PRICE QUOTE" [level=2] [ref=e1027]
+          - paragraph [ref=e1028]: Fill in your vehicle details and the part you need. We'll send you a competitive price quote via WhatsApp within minutes.
+          - generic [ref=e1029]:
+            - generic [ref=e1030]:
+              - img [ref=e1032]
+              - generic [ref=e1034]: Free quotes with no obligation
+            - generic [ref=e1035]:
+              - img [ref=e1037]
+              - generic [ref=e1039]: Response within 30 minutes
+            - generic [ref=e1040]:
+              - img [ref=e1042]
+              - generic [ref=e1044]: Best prices guaranteed
+            - generic [ref=e1045]:
+              - img [ref=e1047]
+              - generic [ref=e1049]: Expert recommendations included
+        - generic [ref=e1051]:
+          - generic [ref=e1052]:
+            - generic [ref=e1053]:
+              - generic [ref=e1054]:
+                - img [ref=e1055]
+                - text: Make *
+              - combobox [ref=e1059]:
+                - option "Select make" [selected]
+                - option "Toyota"
+                - option "Honda"
+                - option "Nissan"
+                - option "Suzuki"
+                - option "Mitsubishi"
+                - option "Mazda"
+                - option "BMW"
+                - option "Mercedes-Benz"
+                - option "Audi"
+                - option "Volkswagen"
+                - option "Hyundai"
+                - option "Kia"
+                - option "TATA"
+                - option "Mahindra"
+                - option "Subaru"
+                - option "Isuzu"
+                - option "Other"
+            - generic [ref=e1060]:
+              - generic [ref=e1061]: Model *
+              - textbox "e.g., Corolla" [ref=e1062]
+          - generic [ref=e1063]:
+            - generic [ref=e1064]:
+              - generic [ref=e1065]:
+                - img [ref=e1066]
+                - text: Year *
+              - combobox [ref=e1068]:
+                - option "Select year" [selected]
+                - option "2025"
+                - option "2024"
+                - option "2023"
+                - option "2022"
+                - option "2021"
+                - option "2020"
+                - option "2019"
+                - option "2018"
+                - option "2017"
+                - option "2016"
+                - option "2015"
+                - option "2014"
+                - option "2013"
+                - option "2012"
+                - option "2011"
+                - option "2010"
+                - option "2009"
+                - option "2008"
+                - option "2007"
+                - option "2006"
+                - option "2005"
+                - option "2004"
+                - option "2003"
+                - option "2002"
+                - option "2001"
+                - option "2000"
+                - option "1999"
+                - option "1998"
+                - option "1997"
+                - option "1996"
+            - generic [ref=e1069]:
+              - generic [ref=e1070]:
+                - img [ref=e1071]
+                - text: Category *
+              - combobox [ref=e1074]:
+                - option "Select category" [selected]
+                - option "Engine Parts"
+                - option "Brake System"
+                - option "Suspension"
+                - option "Transmission"
+                - option "Filters"
+                - option "Cooling System"
+                - option "Belts & Hoses"
+                - option "Electrical"
+                - option "Body Parts"
+                - option "Other"
+          - generic [ref=e1075]:
+            - generic [ref=e1076]:
+              - img [ref=e1077]
+              - text: Part Name *
+            - textbox "e.g., Front brake pads, Timing belt kit" [ref=e1079]
+          - generic [ref=e1080]:
+            - generic [ref=e1081]: Quantity
+            - spinbutton [ref=e1082]: "1"
+          - button "Get Quote via WhatsApp" [disabled] [ref=e1083]:
+            - img [ref=e1084]
+            - text: Get Quote via WhatsApp
+            - img [ref=e1086]
+          - paragraph [ref=e1088]: We typically respond within 30 minutes during business hours
+      - generic [ref=e1111]:
+        - img [ref=e1114]
+        - heading "NEED THE RIGHT PART?" [level=2] [ref=e1117]
+        - paragraph [ref=e1118]: LET'S FIND IT TOGETHER.
+        - generic [ref=e1119]:
+          - img [ref=e1120]
+          - generic [ref=e1123]: Response within 5 minutes!
+        - generic [ref=e1124]:
+          - link "WhatsApp Now" [ref=e1125] [cursor=pointer]:
+            - /url: https://wa.me/94704344855?text=Hello!%20I'm%20interested%20in%20spare%20parts.
+            - img [ref=e1126]
+            - text: WhatsApp Now
+          - link "Call Us" [ref=e1128] [cursor=pointer]:
+            - /url: tel:+94704344855
+            - img [ref=e1129]
+            - text: Call Us
+        - paragraph [ref=e1131]: Open 7 days a week • 9:00 AM - 7:00 PM
+      - generic [ref=e1133]:
+        - generic [ref=e1134]:
+          - generic [ref=e1135]:
+            - img [ref=e1136]
+            - generic [ref=e1139]: Contact Us
+          - heading "VISIT OUR WORKSHOP" [level=2] [ref=e1140]
+        - generic [ref=e1141]:
+          - generic [ref=e1142]:
+            - generic [ref=e1144]:
+              - img [ref=e1146]
+              - generic [ref=e1149]:
+                - heading "Location" [level=3] [ref=e1150]
+                - paragraph [ref=e1151]: 160/1/B, Ihalakaragahamuna, Kadawatha, Sri Lanka
+                - link "Get Directions" [ref=e1152] [cursor=pointer]:
+                  - /url: https://maps.google.com/?q=Super+Motor+Trading+Kadawatha
+                  - img [ref=e1153]
+                  - text: Get Directions
+                  - img [ref=e1155]
+            - generic [ref=e1160]:
+              - img [ref=e1162]
+              - generic [ref=e1164]:
+                - heading "Phone" [level=3] [ref=e1165]
+                - paragraph [ref=e1166]:
+                  - generic [ref=e1167]: "Store: +94 70 434 4855"
+                  - generic [ref=e1168]: "Mobile: +94 77 729 1364"
+                - link "Call Now" [ref=e1169] [cursor=pointer]:
+                  - /url: tel:+94704344855
+                  - img [ref=e1170]
+                  - text: Call Now
+            - generic [ref=e1173]:
+              - img [ref=e1175]
+              - generic [ref=e1177]:
+                - heading "WhatsApp" [level=3] [ref=e1178]
+                - paragraph [ref=e1179]: +94 70 434 4855
+                - link "Chat Now" [ref=e1180] [cursor=pointer]:
+                  - /url: https://wa.me/94704344855?text=Hello!%20I'm%20interested%20in%20spare%20parts.
+                  - img [ref=e1181]
+                  - text: Chat Now
+                  - img [ref=e1183]
+            - generic [ref=e1188]:
+              - img [ref=e1190]
+              - generic [ref=e1193]:
+                - heading "Email" [level=3] [ref=e1194]
+                - paragraph [ref=e1195]: supermotortrading01@gmail.com
+                - link "Send Email" [ref=e1196] [cursor=pointer]:
+                  - /url: mailto:supermotortrading01@gmail.com
+                  - img [ref=e1197]
+                  - text: Send Email
+            - generic [ref=e1201]:
+              - img [ref=e1203]
+              - generic [ref=e1206]:
+                - heading "Business Hours" [level=3] [ref=e1207]
+                - generic [ref=e1209]:
+                  - generic [ref=e1210]: Monday - Sunday
+                  - generic [ref=e1211]: 9:00 AM - 7:00 PM
+                - status "Store is currently open. Closes in 1h 47m" [ref=e1212]:
+                  - generic [ref=e1217]:
+                    - generic [ref=e1218]: We're Open
+                    - generic [ref=e1219]: Closes in 1h 47m
+            - generic [ref=e1220]:
+              - link "Visit our Facebook page" [ref=e1221] [cursor=pointer]:
+                - /url: https://web.facebook.com/profile.php?id=100093416801357
+                - img [ref=e1222]
+              - link "Contact us on WhatsApp" [ref=e1224] [cursor=pointer]:
+                - /url: https://wa.me/94704344855?text=Hello!%20I'm%20interested%20in%20spare%20parts.
+                - img [ref=e1225]
+          - generic [ref=e1227]:
+            - generic [ref=e1228]:
+              - generic [ref=e1229]:
+                - generic [ref=e1230]:
+                  - img [ref=e1232]
+                  - generic [ref=e1235]:
+                    - heading "SUPER MOTOR TRADING" [level=4] [ref=e1236]
+                    - paragraph [ref=e1237]: Kadawatha, Sri Lanka
+                - button "DIRECTIONS" [ref=e1238] [cursor=pointer]:
+                  - img [ref=e1239]
+                  - text: DIRECTIONS
+              - generic [ref=e1242]:
+                - generic:
+                  - generic:
+                    - button:
+                      - img [ref=e1244] [cursor=pointer]
+              - generic [ref=e1248]:
+                - generic [ref=e1249]:
+                  - generic [ref=e1250]:
+                    - img [ref=e1251]
+                    - text: Monday - Sunday
+                  - generic [ref=e1254]: 9:00 AM - 7:00 PM
+                - link "+94 70 434 4855" [ref=e1255] [cursor=pointer]:
+                  - /url: tel:+94704344855
+                  - img [ref=e1256]
+                  - text: +94 70 434 4855
+            - generic [ref=e1258]:
+              - heading "Send Us a Message" [level=3] [ref=e1259]
+              - generic [ref=e1260]:
+                - generic [ref=e1261]:
+                  - generic [ref=e1262]:
+                    - generic [ref=e1263]: Your Name *
+                    - textbox "Your Name *" [ref=e1264]:
+                      - /placeholder: John Doe
+                  - generic [ref=e1265]:
+                    - generic [ref=e1266]: Phone Number *
+                    - textbox "Phone Number *" [ref=e1267]:
+                      - /placeholder: +94 77 123 4567
+                - generic [ref=e1268]:
+                  - generic [ref=e1269]:
+                    - generic [ref=e1270]: Email Address
+                    - textbox "Email Address" [ref=e1271]:
+                      - /placeholder: john@example.com
+                  - generic [ref=e1272]:
+                    - generic [ref=e1273]: Vehicle Brand
+                    - textbox "Vehicle Brand" [ref=e1274]:
+                      - /placeholder: Toyota, Honda, BMW...
+                - generic [ref=e1275]:
+                  - generic [ref=e1276]:
+                    - text: Your Message *
+                    - generic [ref=e1277]: (0/500)
+                  - textbox "Your Message *(0/500)" [ref=e1278]:
+                    - /placeholder: Describe the parts you're looking for...
+                - button "Send Message" [ref=e1279] [cursor=pointer]:
+                  - img [ref=e1280]
+                  - generic [ref=e1283]: Send Message
+                - paragraph [ref=e1284]: By submitting, you agree to our privacy policy. We'll never share your information.
+    - contentinfo [ref=e1285]:
+      - generic [ref=e1288]:
+        - generic [ref=e1289]:
+          - generic [ref=e1290]:
+            - link "Super Motor Trading SUPER MOTOR TRADING" [ref=e1291] [cursor=pointer]:
+              - /url: "#home"
+              - img "Super Motor Trading" [ref=e1292]
+              - generic [ref=e1293]:
+                - generic [ref=e1294]: SUPER MOTOR
+                - text: TRADING
+            - paragraph [ref=e1295]: Your trusted destination for genuine vehicle spare parts. Premium quality for all vehicle types.
+            - generic [ref=e1296]:
+              - link "Facebook" [ref=e1297] [cursor=pointer]:
+                - /url: https://web.facebook.com/profile.php?id=100093416801357
+                - img [ref=e1298]
+              - link "WhatsApp" [ref=e1300] [cursor=pointer]:
+                - /url: https://wa.me/94704344855?text=Hello!%20I'm%20interested%20in%20spare%20parts.
+                - img [ref=e1301]
+          - generic [ref=e1303]:
+            - heading "Quick Links" [level=4] [ref=e1304]
+            - list [ref=e1305]:
+              - listitem [ref=e1306]:
+                - link "Home" [ref=e1307] [cursor=pointer]:
+                  - /url: "#home"
+              - listitem [ref=e1308]:
+                - link "About" [ref=e1309] [cursor=pointer]:
+                  - /url: "#about"
+              - listitem [ref=e1310]:
+                - link "Products" [ref=e1311] [cursor=pointer]:
+                  - /url: "#products"
+              - listitem [ref=e1312]:
+                - link "Why Us" [ref=e1313] [cursor=pointer]:
+                  - /url: "#why-us"
+              - listitem [ref=e1314]:
+                - link "Contact" [ref=e1315] [cursor=pointer]:
+                  - /url: "#contact"
+          - generic [ref=e1316]:
+            - heading "Products" [level=4] [ref=e1317]
+            - list [ref=e1318]:
+              - listitem [ref=e1319]:
+                - link "Engine Parts" [ref=e1320] [cursor=pointer]:
+                  - /url: "#products"
+              - listitem [ref=e1321]:
+                - link "Brake System" [ref=e1322] [cursor=pointer]:
+                  - /url: "#products"
+              - listitem [ref=e1323]:
+                - link "Suspension" [ref=e1324] [cursor=pointer]:
+                  - /url: "#products"
+              - listitem [ref=e1325]:
+                - link "Transmission" [ref=e1326] [cursor=pointer]:
+                  - /url: "#products"
+              - listitem [ref=e1327]:
+                - link "Filters" [ref=e1328] [cursor=pointer]:
+                  - /url: "#products"
+              - listitem [ref=e1329]:
+                - link "Cooling System" [ref=e1330] [cursor=pointer]:
+                  - /url: "#products"
+          - generic [ref=e1331]:
+            - heading "Contact" [level=4] [ref=e1332]
+            - list [ref=e1333]:
+              - listitem [ref=e1334]:
+                - img [ref=e1335]
+                - generic [ref=e1338]: 160/1/B, Ihalakaragahamuna, Kadawatha, Sri Lanka
+              - listitem [ref=e1339]:
+                - img [ref=e1340]
+                - link "+94 70 434 4855" [ref=e1342] [cursor=pointer]:
+                  - /url: tel:+94704344855
+              - listitem [ref=e1343]:
+                - img [ref=e1344]
+                - link "supermotortrading01@gmail.com" [ref=e1347] [cursor=pointer]:
+                  - /url: mailto:supermotortrading01@gmail.com
+              - listitem [ref=e1348]:
+                - img [ref=e1349]
+                - generic [ref=e1352]:
+                  - generic [ref=e1353]: Hours
+                  - generic [ref=e1354]: "Mon-Sun: 9AM - 7PM"
+        - generic [ref=e1355]:
+          - paragraph [ref=e1356]: © 2025 Super Motor Trading. All rights reserved.
+          - paragraph [ref=e1357]:
+            - text: Built with
+            - img [ref=e1358]
+            - text: in Sri Lanka
+    - navigation [ref=e1362]:
+      - generic [ref=e1364]:
+        - button "Home" [ref=e1365] [cursor=pointer]:
+          - img [ref=e1367]
+          - generic [ref=e1369]: Home
+        - button "Parts" [ref=e1370] [cursor=pointer]:
+          - img [ref=e1371]
+          - generic [ref=e1373]: Parts
+        - button "Search" [ref=e1374] [cursor=pointer]:
+          - img [ref=e1375]
+          - generic [ref=e1377]: Search
+        - button "Contact" [ref=e1378] [cursor=pointer]:
+          - img [ref=e1379]
+          - generic [ref=e1381]: Contact
+        - button "Chat" [ref=e1382] [cursor=pointer]:
+          - img [ref=e1383]
+          - generic [ref=e1385]: Chat
+  - status [ref=e1386]
+  - alert [ref=e1387]
+```

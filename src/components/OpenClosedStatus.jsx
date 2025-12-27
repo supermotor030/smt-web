@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import PropTypes from 'prop-types'
 import useBusinessHours from '../hooks/useBusinessHours'
 
 export default function OpenClosedStatus({ compact = false }) {
@@ -6,7 +7,12 @@ export default function OpenClosedStatus({ compact = false }) {
 
   if (compact) {
     return (
-      <div className="flex items-center gap-2">
+      <div 
+        className="flex items-center gap-2"
+        role="status"
+        aria-live="polite"
+        aria-label={`Store is currently ${isOpen ? 'open' : 'closed'}. ${message}`}
+      >
         <motion.div
           className={`w-2 h-2 rounded-full ${isOpen ? 'bg-success' : 'bg-steel-600'}`}
           animate={isOpen ? { 
@@ -18,6 +24,7 @@ export default function OpenClosedStatus({ compact = false }) {
             repeat: Infinity,
             ease: 'easeInOut'
           }}
+          aria-hidden="true"
         />
         <span className={`font-tech text-xs font-semibold uppercase tracking-wide ${isOpen ? 'text-success' : 'text-steel-600'}`}>
           {isOpen ? 'Open' : 'Closed'}
@@ -32,6 +39,9 @@ export default function OpenClosedStatus({ compact = false }) {
       initial={{ rotateX: -90 }}
       animate={{ rotateX: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
+      role="status"
+      aria-live="polite"
+      aria-label={`Store is currently ${isOpen ? 'open' : 'closed'}. ${message}`}
     >
       {/* Chain decoration */}
       <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-steel-600" />
@@ -80,7 +90,12 @@ export default function OpenClosedStatus({ compact = false }) {
           bg-gradient-to-b from-transparent to-white
           pointer-events-none
         `}
+        aria-hidden="true"
       />
     </motion.div>
   )
+}
+
+OpenClosedStatus.propTypes = {
+  compact: PropTypes.bool,
 }

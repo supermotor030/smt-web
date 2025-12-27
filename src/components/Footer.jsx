@@ -6,10 +6,6 @@ import { company, contact, navLinks, products } from '../data/siteData'
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   const scrollToSection = (e, href) => {
     e.preventDefault()
     const id = href.replace('#', '')
@@ -28,12 +24,12 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-void relative overflow-hidden">
+    <footer className="bg-forge-950 relative overflow-hidden">
       {/* Top gradient line */}
       <div className="h-1 bg-gradient-to-r from-ignition-700 via-ignition-500 to-warning" />
 
       {/* Blueprint pattern background */}
-      <div className="absolute inset-0 blueprint-grid opacity-30" />
+      <div className="absolute inset-0 blueprint-grid opacity-20" />
 
       {/* Gear watermark */}
       <div className="absolute right-0 bottom-0 opacity-5 pointer-events-none">

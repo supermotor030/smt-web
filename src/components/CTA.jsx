@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { useMemo } from 'react'
 import { LuPhone, LuClock } from 'react-icons/lu'
 import { FaWhatsapp } from 'react-icons/fa6'
 import { GiGears } from 'react-icons/gi'
@@ -10,6 +11,16 @@ export default function CTA() {
     threshold: 0.3,
     triggerOnce: true,
   })
+
+  // Memoize particle positions to prevent re-renders
+  const particles = useMemo(() => 
+    Array.from({ length: 15 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      duration: 3 + Math.random() * 2,
+      delay: Math.random() * 2,
+    })), [])
 
   return (
     <section className="py-20 lg:py-28 bg-forge-900 relative overflow-hidden">
@@ -27,22 +38,22 @@ export default function CTA() {
 
       {/* Background particles */}
       <div className="absolute inset-0">
-        {[...Array(15)].map((_, i) => (
+        {particles.map((particle) => (
           <motion.div
-            key={i}
+            key={particle.id}
             className="absolute w-1.5 h-1.5 bg-ignition-600/20 rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
             }}
             animate={{
               y: [0, -20, 0],
               opacity: [0.2, 0.5, 0.2],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: particle.duration,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: particle.delay,
             }}
           />
         ))}

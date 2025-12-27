@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { Suspense, lazy } from 'react'
 import { 
   LuMapPin, 
   LuPhone, 
@@ -9,9 +10,12 @@ import {
   LuNavigation
 } from 'react-icons/lu'
 import { FaWhatsapp, FaFacebookF } from 'react-icons/fa6'
-import { contact, businessHours } from '../data/siteData'
+import { contact } from '../data/siteData'
 import OpenClosedStatus from './OpenClosedStatus'
 import ContactForm from './ContactForm'
+
+// Lazy load the map component
+const StoreMap = lazy(() => import('./StoreMap'))
 
 export default function Contact() {
   const [ref, inView] = useInView({
@@ -207,23 +211,14 @@ export default function Contact() {
             variants={itemVariants}
             className="lg:col-span-3 space-y-6"
           >
-            {/* Map */}
-            <div className="relative h-[300px] rounded-2xl overflow-hidden shadow-card">
-              <iframe
-                src={contact.mapsEmbed}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Super Motor Trading Location"
-                className="absolute inset-0"
-              />
-              
-              {/* Decorative border */}
-              <div className="absolute inset-0 border-4 border-white rounded-2xl pointer-events-none" />
-            </div>
+            {/* Interactive Map */}
+            <Suspense fallback={
+              <div className="h-[380px] rounded-2xl bg-forge-800 animate-pulse flex items-center justify-center">
+                <div className="text-steel-400 font-tech">Loading map...</div>
+              </div>
+            }>
+              <StoreMap />
+            </Suspense>
 
             {/* Contact Form */}
             <ContactForm />

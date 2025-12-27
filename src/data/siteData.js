@@ -203,7 +203,7 @@ export const vehicleBrands = {
     label: 'Indian',
     flag: 'IN',
     gradient: 'from-orange-500 to-green-600',
-    brands: ['TATA', 'Mahindra', 'Maruti Suzuki', 'Bajaj'],
+    brands: ['TATA', 'Mahindra', 'Maruti Suzuki'],
   },
 }
 

@@ -55,10 +55,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=Orbitron:wght@500;600;700&family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Google Fonts - Optimized with display=swap and reduced families -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
     
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data - AutoPartsStore -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -73,6 +73,7 @@
         "@type": "PostalAddress",
         "streetAddress": "160/1/B, Ihalakaragahamuna",
         "addressLocality": "Kadawatha",
+        "addressRegion": "Western Province",
         "addressCountry": "LK"
       },
       "geo": {
@@ -80,7 +81,14 @@
         "latitude": "7.013811683006309",
         "longitude": "79.87365782260893"
       },
-      "openingHours": "Mo-Su 09:00-19:00",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
       "priceRange": "$$",
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -89,15 +97,87 @@
       },
       "sameAs": [
         "https://web.facebook.com/profile.php?id=100093416801357"
-      ],
-      "image": "https://supermotortrading.com/logo.jpg"
+      ]
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-i2eVLIbn.js"></script>
+    
+    <!-- JSON-LD Structured Data - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you have parts for all vehicle brands?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We stock parts for Toyota, Honda, Nissan, Mitsubishi, Suzuki, BMW, Mercedes, Audi and many more Japanese, European, and Indian vehicles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are your parts genuine/original?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We guarantee 100% genuine parts. We also offer high-quality aftermarket alternatives for budget-conscious customers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer islandwide delivery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we deliver across Sri Lanka. Delivery times vary by location. Contact us for specific delivery information to your area."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are your business hours?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We're open 7 days a week from 9:00 AM to 7:00 PM. Feel free to contact us via WhatsApp anytime."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I return or exchange parts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we accept returns within 7 days for unused parts with original packaging. Electrical items may have different terms."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- JSON-LD Structured Data - Product Categories -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Vehicle Spare Parts Categories",
+      "description": "Browse our wide range of genuine vehicle spare parts",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Engine Parts"},
+        {"@type": "ListItem", "position": 2, "name": "Brake Systems"},
+        {"@type": "ListItem", "position": 3, "name": "Transmission"},
+        {"@type": "ListItem", "position": 4, "name": "Suspension"},
+        {"@type": "ListItem", "position": 5, "name": "Electrical"},
+        {"@type": "ListItem", "position": 6, "name": "Cooling System"},
+        {"@type": "ListItem", "position": 7, "name": "Filters & Oils"},
+        {"@type": "ListItem", "position": 8, "name": "Body Parts"}
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/index-DszHox85.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-CRB3T2We.js">
     <link rel="modulepreload" crossorigin href="/assets/motion-Ds7-KdJ_.js">
-    <link rel="modulepreload" crossorigin href="/assets/icons-Bt6t7GTh.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-SEAcM7s2.css">
+    <link rel="modulepreload" crossorigin href="/assets/icons-gi-WfvnqGJ4.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-lu-CpA60exd.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-fa-C6e1YYUr.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BGE2ck9B.css">
   <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
   <body>
     <div id="root"></div>

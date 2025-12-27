@@ -74,11 +74,15 @@ export default function useBusinessHours() {
       timeUntilChange = minutesUntilOpen
     }
 
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    const currentDay = days[dayOfWeek]
+
     return {
       isOpen,
       message,
       timeUntilChange,
       currentHour: hours,
+      currentDay,
       todaySchedule,
       formattedTime: sriLankaTime.toLocaleTimeString('en-US', { 
         hour: '2-digit', 

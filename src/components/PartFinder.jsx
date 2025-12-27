@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { LuSearch, LuChevronDown, LuArrowRight, LuZap } from 'react-icons/lu'
+import { LuSearch, LuChevronDown, LuArrowRight, LuZap, LuPackageSearch } from 'react-icons/lu'
 import { GiCarWheel } from 'react-icons/gi'
 import { vehicleBrands, products } from '../data/siteData'
+import PartRequestForm from './PartRequestForm'
 
 export default function PartFinder() {
   const [selectedBrand, setSelectedBrand] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('')
   const [isSearching, setIsSearching] = useState(false)
   const [searchComplete, setSearchComplete] = useState(false)
+  const [isRequestFormOpen, setIsRequestFormOpen] = useState(false)
   const [ref, inView] = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -219,8 +221,35 @@ export default function PartFinder() {
               ))}
             </div>
           </div>
+
+          {/* Can't find what you need? */}
+          <motion.div 
+            className="mt-8 text-center"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="inline-flex flex-col items-center gap-2 p-4 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-white/70 text-sm">Can't find the part you're looking for?</p>
+              <motion.button
+                onClick={() => setIsRequestFormOpen(true)}
+                className="flex items-center gap-2 px-6 py-2 bg-white text-ignition-600 font-tech font-bold rounded-lg hover:bg-white/90 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <LuPackageSearch className="w-4 h-4" />
+                REQUEST A PART
+              </motion.button>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
+
+      {/* Part Request Form Modal */}
+      <PartRequestForm 
+        isOpen={isRequestFormOpen} 
+        onClose={() => setIsRequestFormOpen(false)} 
+      />
     </section>
   )
 }

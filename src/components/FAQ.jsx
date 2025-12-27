@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer'
 import { LuPlus, LuMinus, LuMessageCircle } from 'react-icons/lu'
 import { GiSpanner } from 'react-icons/gi'
 import { faqs, contact } from '../data/siteData'
+import { trackFAQInteraction } from '../utils/analytics'
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null)
@@ -13,6 +14,8 @@ export default function FAQ() {
   })
 
   const toggleFAQ = (index) => {
+    const isOpening = openIndex !== index
+    trackFAQInteraction(faqs[index].question, isOpening)
     setOpenIndex(openIndex === index ? null : index)
   }
 

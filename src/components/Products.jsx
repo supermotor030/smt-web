@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { LuArrowRight } from 'react-icons/lu'
 import { GiSpanner } from 'react-icons/gi'
-import { products, contact } from '../data/siteData'
+import { products } from '../data/siteData'
 
 export default function Products({ onProductSelect }) {
   const [ref, inView] = useInView({
@@ -73,7 +73,7 @@ export default function Products({ onProductSelect }) {
           animate={inView ? 'visible' : 'hidden'}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {products.map((product, index) => (
+          {products.map((product) => (
             <motion.div
               key={product.id}
               variants={itemVariants}

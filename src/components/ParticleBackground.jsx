@@ -1,69 +1,55 @@
-import { useEffect, useState, useMemo } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useMemo } from 'react'
 import useMediaQuery from '../hooks/useMediaQuery'
 import useReducedMotion from '../hooks/useReducedMotion'
 
+/**
+ * ParticleBackground - Lightweight CSS-only particles
+ * Optimized: Uses pure CSS animations instead of Framer Motion for better performance
+ */
 export default function ParticleBackground() {
   const isDesktop = useMediaQuery('(min-width: 1024px)')
   const prefersReducedMotion = useReducedMotion()
-  const { scrollY } = useScroll()
   
-  const particleCount = isDesktop ? 25 : 10
+  // Reduced particle count: 8 on desktop, 4 on mobile
+  const particleCount = isDesktop ? 8 : 4
   
   const particles = useMemo(() => {
     return Array.from({ length: particleCount }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: Math.random() * 4 + 2,
-      color: Math.random() < 0.5 
-        ? '#FF5500' 
-        : Math.random() < 0.7 
-          ? '#E8E8F0' 
-          : '#0077FF',
-      duration: Math.random() * 10 + 15,
-      delay: Math.random() * 5,
+      size: Math.random() * 3 + 2,
+      color: i % 3 === 0 ? '#FF5500' : i % 3 === 1 ? '#E8E8F0' : '#0077FF',
+      duration: 15 + i * 3, // Staggered durations
+      delay: i * 2,
     }))
   }, [particleCount])
-
-  const y = useTransform(scrollY, [0, 3000], [0, -900])
 
   if (prefersReducedMotion) {
     return null
   }
 
   return (
-    <motion.div 
+    <div 
       className="fixed inset-0 pointer-events-none z-[1] overflow-hidden"
-      style={{ y }}
       aria-hidden="true"
     >
       {particles.map((particle) => (
-        <motion.div
+        <div
           key={particle.id}
-          className="absolute rounded-full"
+          className="absolute rounded-full animate-float"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
             width: particle.size,
             height: particle.size,
             backgroundColor: particle.color,
-            filter: `blur(${particle.size / 3}px)`,
-            opacity: 0.6,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            x: [0, Math.random() * 20 - 10, 0],
-            opacity: [0.4, 0.7, 0.4],
-          }}
-          transition={{
-            duration: particle.duration,
-            repeat: Infinity,
-            delay: particle.delay,
-            ease: 'easeInOut',
+            opacity: 0.4,
+            animationDuration: `${particle.duration}s`,
+            animationDelay: `${particle.delay}s`,
           }}
         />
       ))}
-    </motion.div>
+    </div>
   )
 }

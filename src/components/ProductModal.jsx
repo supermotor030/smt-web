@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { LuX, LuPhone, LuMessageCircle, LuMail, LuArrowRight, LuStar } from 'react-icons/lu'
+import { LuX, LuPhone, LuMail, LuArrowRight, LuStar } from 'react-icons/lu'
 import { FaWhatsapp } from 'react-icons/fa6'
 import { contact } from '../data/siteData'
 

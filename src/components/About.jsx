@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { LuArrowRight, LuCheck } from 'react-icons/lu'
 import { GiGears } from 'react-icons/gi'
-import { company, contact } from '../data/siteData'
 
 export default function About() {
   const [ref, inView] = useInView({
