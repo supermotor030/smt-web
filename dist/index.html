@@ -1,65 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/jpeg" href="/logo.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-17V7GJHMPZ"></script>
-    <script>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Preload critical hero background for faster LCP -->
+  <link rel="preload" as="image" href="/hero-bg.png" />
+
+  <!-- Google Analytics - ID configured via environment variable -->
+  <script>
+    // GA Tracking ID from environment (set in .env as VITE_GA_TRACKING_ID)
+    // Falls back to production ID if not set
+    (function () {
+      var GA_ID = 'G-17V7GJHMPZ' !== '' && 'G-17V7GJHMPZ'.indexOf('VITE_') === -1
+        ? 'G-17V7GJHMPZ'
+        : 'G-17V7GJHMPZ';
+
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(script);
+
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);} 
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag;
       gtag('js', new Date());
-      gtag('config', 'G-17V7GJHMPZ');
-    </script>
-    
-    <!-- Primary Meta Tags -->
-    <title>Super Motor Trading | Premium Vehicle Spare Parts in Sri Lanka</title>
-    <meta name="title" content="Super Motor Trading | Premium Vehicle Spare Parts in Sri Lanka" />
-    <meta name="description" content="Your trusted destination for genuine vehicle spare parts in Sri Lanka. Toyota, Honda, BMW, Mercedes & more. Quality parts, competitive prices. Islandwide delivery." />
-    <meta name="keywords" content="spare parts, Sri Lanka, Kadawatha, Toyota parts, Honda parts, BMW parts, genuine parts, vehicle parts, auto parts, car parts" />
-    <meta name="author" content="Super Motor Trading" />
-    <meta name="robots" content="index, follow" />
-    
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#FF5500" />
-    <meta name="msapplication-TileColor" content="#FF5500" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://supermotortrading.com/" />
-    <meta property="og:title" content="Super Motor Trading | Premium Vehicle Spare Parts in Sri Lanka" />
-    <meta property="og:description" content="Your trusted destination for genuine vehicle spare parts in Sri Lanka. Toyota, Honda, BMW, Mercedes & more. Quality parts, competitive prices." />
-    <meta property="og:image" content="https://supermotortrading.com/logo.jpg" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Super Motor Trading" />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://supermotortrading.com/" />
-    <meta property="twitter:title" content="Super Motor Trading | Premium Vehicle Spare Parts in Sri Lanka" />
-    <meta property="twitter:description" content="Your trusted destination for genuine vehicle spare parts in Sri Lanka. Toyota, Honda, BMW, Mercedes & more. Quality parts, competitive prices." />
-    <meta property="twitter:image" content="https://supermotortrading.com/logo.jpg" />
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://supermotortrading.com/" />
-    
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="/logo.jpg" />
-    
-    <!-- Manifest -->
-    <link rel="manifest" href="/manifest.json" />
-    
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    <!-- Google Fonts - Optimized with display=swap and reduced families -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
-    
-    <!-- JSON-LD Structured Data - AutoPartsStore -->
-    <script type="application/ld+json">
+      gtag('config', GA_ID);
+    })();
+  </script>
+
+  <!-- Primary Meta Tags -->
+  <title>Super Motor Trading | Premium Vehicle Spare Parts in Sri Lanka</title>
+  <meta name="title" content="Super Motor Trading | Premium Vehicle Spare Parts in Sri Lanka" />
+  <meta name="description"
+    content="Your trusted destination for genuine vehicle spare parts in Sri Lanka. Toyota, Honda, BMW, Mercedes & more. Quality parts, competitive prices. Islandwide delivery." />
+  <meta name="keywords"
+    content="spare parts, Sri Lanka, Kadawatha, Toyota parts, Honda parts, BMW parts, genuine parts, vehicle parts, auto parts, car parts" />
+  <meta name="author" content="Super Motor Trading" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#FF5500" />
+  <meta name="msapplication-TileColor" content="#FF5500" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://supermotortrading.com/" />
+  <meta property="og:title" content="Super Motor Trading | Premium Vehicle Spare Parts in Sri Lanka" />
+  <meta property="og:description"
+    content="Your trusted destination for genuine vehicle spare parts in Sri Lanka. Toyota, Honda, BMW, Mercedes & more. Quality parts, competitive prices." />
+  <meta property="og:image" content="https://supermotortrading.com/logo.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Super Motor Trading" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://supermotortrading.com/" />
+  <meta property="twitter:title" content="Super Motor Trading | Premium Vehicle Spare Parts in Sri Lanka" />
+  <meta property="twitter:description"
+    content="Your trusted destination for genuine vehicle spare parts in Sri Lanka. Toyota, Honda, BMW, Mercedes & more. Quality parts, competitive prices." />
+  <meta property="twitter:image" content="https://supermotortrading.com/logo.jpg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://supermotortrading.com/" />
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="/logo.jpg" />
+
+  <!-- Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts - Optimized with display=swap and reduced families -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- JSON-LD Structured Data - AutoPartsStore -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "AutoPartsStore",
@@ -67,7 +90,7 @@
       "description": "Premium vehicle spare parts supplier in Sri Lanka. Quality parts, competitive prices.",
       "url": "https://supermotortrading.com",
       "telephone": "+94704344855",
-      "email": "supermotortrading01@gmail.com",
+      "email": "info@supermotortrading.com",
       "image": "https://supermotortrading.com/logo.jpg",
       "address": {
         "@type": "PostalAddress",
@@ -100,9 +123,9 @@
       ]
     }
     </script>
-    
-    <!-- JSON-LD Structured Data - FAQPage -->
-    <script type="application/ld+json">
+
+  <!-- JSON-LD Structured Data - FAQPage -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -150,9 +173,9 @@
       ]
     }
     </script>
-    
-    <!-- JSON-LD Structured Data - Product Categories -->
-    <script type="application/ld+json">
+
+  <!-- JSON-LD Structured Data - Product Categories -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -171,20 +194,21 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-DHVMzLR3.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/vendor-CRB3T2We.js">
-    <link rel="modulepreload" crossorigin href="/assets/motion-Ds7-KdJ_.js">
-    <link rel="modulepreload" crossorigin href="/assets/icons-gi-WfvnqGJ4.js">
-    <link rel="modulepreload" crossorigin href="/assets/icons-lu-CpA60exd.js">
-    <link rel="modulepreload" crossorigin href="/assets/icons-fa-C6e1YYUr.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BwngvzBm.css">
-  <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
-  <body>
-    <div id="root"></div>
-    
-    <!-- Console Easter Egg -->
-    <script>
-      console.log(`
+  <script type="module" crossorigin src="/assets/index-Q1l2M7WV.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-CRB3T2We.js">
+  <link rel="modulepreload" crossorigin href="/assets/motion-Ds7-KdJ_.js">
+  <link rel="modulepreload" crossorigin href="/assets/icons-gi-DtDquQ8t.js">
+  <link rel="modulepreload" crossorigin href="/assets/icons-lu-vO4HUzEM.js">
+  <link rel="modulepreload" crossorigin href="/assets/icons-fa-d8CCHySW.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-4gj19Vjf.css">
+<link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- Console Easter Egg -->
+  <script>
+    console.log(`
       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       ⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀
       ⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀
@@ -207,6 +231,7 @@
       Contact: supermotortrading01@gmail.com
       
       `);
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>

@@ -1,2 +1,0 @@
-const c=()=>typeof window<"u"&&typeof window.gtag=="function",a=(t,n={})=>{c()&&window.gtag("event",t,n)},s=(t,n=!0)=>{a("form_submission",{form_name:t,success:n})},i=(t,n="")=>{a("whatsapp_click",{click_context:t,message_preview:n.substring(0,50)})},o=t=>{a("brand_click",{brand_name:t})},e=(t,n)=>{a("faq_interaction",{question:t.substring(0,100),action:n?"opened":"closed"})};export{i as a,e as b,s as c,o as t};
-//# sourceMappingURL=analytics-KFxuDKJc.js.map
