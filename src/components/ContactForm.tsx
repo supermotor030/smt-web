@@ -81,11 +81,18 @@ function getErrorMessage(error: unknown): string {
     if (status === 0) {
       return 'Network error. Please check your internet connection.'
     }
+    if (status === 400) {
+      return 'Configuration error. Please check your EmailJS IDs.'
+    }
+    if (status === 403) {
+      return 'Access denied. Domain validation failed or Public Key invalid.'
+    }
     if (status >= 500) {
       return 'Server error. Please try again in a few minutes.'
     }
     if (status === 429) {
-      return 'Too many requests. Please wait a moment before trying again.'
+      console.warn('Rate limited')
+      return 'Too many requests. Please wait a moment.'
     }
   }
 
