@@ -1,18 +1,29 @@
+# =========================
+# Build Settings
+# =========================
 [build]
   command = "npm run build"
   publish = "dist"
 
+# =========================
+# Cache-Control for index.html
+# =========================
 [[headers]]
   for = "/index.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# =========================
+# Redirect all to index.html (SPA)
+# =========================
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Security Headers
+# =========================
+# Security Headers including CSP
+# =========================
 [[headers]]
   for = "/*"
   [headers.values]
@@ -21,10 +32,19 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(self), interest-cohort=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://formspree.io https://api.whatsapp.com https://www.google-analytics.com; frame-src 'self' https://www.google.com https://maps.google.com;"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
 
+    Content-Security-Policy = "default-src 'self'; \
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; \
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; \
+    font-src 'self' https://fonts.gstatic.com; \
+    img-src 'self' data: https: blob:; \
+    connect-src 'self' https://formspree.io https://api.whatsapp.com https://www.google-analytics.com https://fonts.googleapis.com https://api.emailjs.com; \
+    frame-src 'self' https://www.google.com https://maps.google.com;"
+
+# =========================
 # Cache static assets
+# =========================
 [[headers]]
   for = "/assets/*"
   [headers.values]
@@ -51,13 +71,17 @@
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
+# =========================
 # Service Worker - no cache
+# =========================
 [[headers]]
   for = "/sw.js"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
 
+# =========================
 # Manifest
+# =========================
 [[headers]]
   for = "/manifest.webmanifest"
   [headers.values]
